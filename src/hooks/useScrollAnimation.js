@@ -1,1 +1,35 @@
-'use client';\n\nimport { useEffect, useRef } from 'react';\n\nexport const useScrollAnimation = () => {\n  const elementRef = useRef(null);\n\n  useEffect(() => {\n    const observer = new IntersectionObserver(\n      (entries) => {\n        entries.forEach((entry) => {\n          if (entry.isIntersecting) {\n            entry.target.classList.add('animate');\n          }\n        });\n      },\n      {\n        threshold: 0.1,\n        rootMargin: '0px 0px -100px 0px'\n      }\n    );\n\n    if (elementRef.current) {\n      observer.observe(elementRef.current);\n    }\n\n    return () => {\n      if (elementRef.current) {\n        observer.unobserve(elementRef.current);\n      }\n    };\n  }, []);\n\n  return elementRef;\n};
+'use client';
+
+import { useEffect, useRef } from 'react';
+
+export const useScrollAnimation = () => {
+  const elementRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+      }
+    );
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
+    }
+
+    return () => {
+      if (elementRef.current) {
+        observer.unobserve(elementRef.current);
+      }
+    };
+  }, []);
+
+  return elementRef;
+};
