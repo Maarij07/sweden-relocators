@@ -1374,7 +1374,7 @@ export default function Home() {
                     An Au Pair is a young person living abroad with a Host Family and taking care of the children for accommodation and pocket money.
                   </p>
                   <p>
-                    The Au Pair program is an international cultural exchange that gives the possibility to young people to spend some time abroad, learn more about a different culture, improve their skills in a foreign language in exchange for help with duties related to childcare. The term "au pair" from French means "on equal terms", signifying that Au Pair and Host Family treat each other as equals.
+                    The Au Pair program is an international cultural exchange that gives the possibility to young people to spend some time abroad, learn more about a different culture, improve their skills in a foreign language in exchange for help with duties related to childcare. The term "au pair" from French means "on equal terms", signifying that Au Pair and Host Family treat each other as equal.
                   </p>
                 </div>
                 
