@@ -1,0 +1,9 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Swedish flag-inspired colors: Blue (#005B99) and Yellow (#FFCD00) -->
+  <rect width="32" height="32" rx="4" fill="#005B99"/>
+  <!-- Letter "S" for Sweden -->
+  <path d="M8.5 24V8h7c1.933 0 3.5.8 4.7 2.4 1.2 1.6 1.8 3.733 1.8 6.4 0 2.667-.6 4.8-1.8 6.4C18.967 24.8 17.433 25.6 15.5 25.6H8.5V24zM12 21.6h3.5c1.1 0 2-.533 2.7-1.6.7-1.067 1.05-2.533 1.05-4.4 0-1.867-.35-3.333-1.05-4.4-.7-1.067-1.6-1.6-2.7-1.6H12V21.6z" fill="#FFCD00"/>
+  <!-- Small location pin icon -->
+  <circle cx="24" cy="24" r="3" fill="#FFCD00"/>
+  <circle cx="24" cy="24" r="1.5" fill="#005B99"/>
+</svg>
