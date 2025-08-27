@@ -12,7 +12,6 @@ const Navbar = () => {
   const [isHousingOpen, setIsHousingOpen] = useState(false);
   const [isAssessmentOpen, setIsAssessmentOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -74,11 +73,10 @@ const Navbar = () => {
             href="#" 
             className="transition-colors font-medium text-sm"
             style={{
-              color: '#374151',
-              ':hover': { color: colors.colors.primary.yellow[400] }
+              color: '#374151'
             }}
-            onMouseEnter={(e) => e.target.style.color = colors.colors.primary.yellow[400]}
-            onMouseLeave={(e) => e.target.style.color = '#374151'}
+            onMouseEnter={(e) => (e.target as HTMLElement).style.color = colors.colors.primary.yellow[400]}
+            onMouseLeave={(e) => (e.target as HTMLElement).style.color = '#374151'}
           >
             NEW IN SWEDEN
           </a>
@@ -92,8 +90,8 @@ const Navbar = () => {
             <button
               className="services-button flex items-center space-x-1 transition-colors font-medium text-sm"
               style={{color: '#000000'}}
-              onMouseEnter={(e) => e.target.style.color = colors.colors.primary.yellow[400]}
-              onMouseLeave={(e) => e.target.style.color = '#000000'}
+              onMouseEnter={(e) => (e.target as HTMLElement).style.color = colors.colors.primary.yellow[400]}
+              onMouseLeave={(e) => (e.target as HTMLElement).style.color = '#000000'}
             >
               <span>SERVICES</span>
               <ChevronDownIcon className="w-3 h-3" style={{color: '#000000'}} />
@@ -110,8 +108,8 @@ const Navbar = () => {
             href="#" 
             className="transition-colors font-medium text-sm"
             style={{color: '#374151'}}
-            onMouseEnter={(e) => e.target.style.color = colors.colors.primary.yellow[400]}
-            onMouseLeave={(e) => e.target.style.color = '#374151'}
+            onMouseEnter={(e) => (e.target as HTMLElement).style.color = colors.colors.primary.yellow[400]}
+            onMouseLeave={(e) => (e.target as HTMLElement).style.color = '#374151'}
           >
             ABOUT
           </a>
@@ -125,8 +123,8 @@ const Navbar = () => {
             <button
               className="housing-button flex items-center space-x-1 transition-colors font-medium text-sm"
               style={{color: '#000000'}}
-              onMouseEnter={(e) => e.target.style.color = colors.colors.primary.yellow[400]}
-              onMouseLeave={(e) => e.target.style.color = '#000000'}
+              onMouseEnter={(e) => (e.target as HTMLElement).style.color = colors.colors.primary.yellow[400]}
+              onMouseLeave={(e) => (e.target as HTMLElement).style.color = '#000000'}
             >
               <span>HOUSING</span>
               <ChevronDownIcon className="w-3 h-3" style={{color: '#000000'}} />
@@ -148,8 +146,8 @@ const Navbar = () => {
             <button
               className="assessment-button flex items-center space-x-1 transition-colors font-medium text-sm"
               style={{color: '#000000'}}
-              onMouseEnter={(e) => e.target.style.color = colors.colors.primary.yellow[400]}
-              onMouseLeave={(e) => e.target.style.color = '#000000'}
+              onMouseEnter={(e) => (e.target as HTMLElement).style.color = colors.colors.primary.yellow[400]}
+              onMouseLeave={(e) => (e.target as HTMLElement).style.color = '#000000'}
             >
               <span>ASSESSMENT</span>
               <ChevronDownIcon className="w-3 h-3" style={{color: '#000000'}} />
@@ -166,8 +164,8 @@ const Navbar = () => {
             href="#" 
             className="transition-colors font-medium text-sm"
             style={{color: '#374151'}}
-            onMouseEnter={(e) => e.target.style.color = colors.colors.primary.yellow[400]}
-            onMouseLeave={(e) => e.target.style.color = '#374151'}
+            onMouseEnter={(e) => (e.target as HTMLElement).style.color = colors.colors.primary.yellow[400]}
+            onMouseLeave={(e) => (e.target as HTMLElement).style.color = '#374151'}
           >
             CONTACT
           </a>
@@ -184,8 +182,8 @@ const Navbar = () => {
               borderStyle: 'solid',
               borderColor: '#d1d5db'
             }}
-            onMouseEnter={(e) => e.target.style.borderColor = colors.colors.primary.yellow[400]}
-            onMouseLeave={(e) => e.target.style.borderColor = '#d1d5db'}
+            onMouseEnter={(e) => (e.target as HTMLElement).style.borderColor = colors.colors.primary.yellow[400]}
+            onMouseLeave={(e) => (e.target as HTMLElement).style.borderColor = '#d1d5db'}
           >
             <div className="flex items-center space-x-1.5">
               <div 
@@ -217,10 +215,10 @@ const Navbar = () => {
               color: colors.colors.background.slate[900]
             }}
             onMouseEnter={(e) => {
-              e.target.style.background = `linear-gradient(to right, ${colors.colors.primary.yellow[500]}, #d97706)`;
+              (e.target as HTMLElement).style.background = `linear-gradient(to right, ${colors.colors.primary.yellow[500]}, #d97706)`;
             }}
             onMouseLeave={(e) => {
-              e.target.style.background = `linear-gradient(to right, ${colors.colors.primary.yellow[400]}, ${colors.colors.primary.yellow[500]})`;
+              (e.target as HTMLElement).style.background = `linear-gradient(to right, ${colors.colors.primary.yellow[400]}, ${colors.colors.primary.yellow[500]})`;
             }}
           >
             Book An Appointment
@@ -235,12 +233,12 @@ const Navbar = () => {
               borderColor: '#d1d5db'
             }}
             onMouseEnter={(e) => {
-              e.target.style.color = colors.colors.primary.yellow[400];
-              e.target.style.borderColor = colors.colors.primary.yellow[400];
+              (e.target as HTMLElement).style.color = colors.colors.primary.yellow[400];
+              (e.target as HTMLElement).style.borderColor = colors.colors.primary.yellow[400];
             }}
             onMouseLeave={(e) => {
-              e.target.style.color = '#374151';
-              e.target.style.borderColor = '#d1d5db';
+              (e.target as HTMLElement).style.color = '#374151';
+              (e.target as HTMLElement).style.borderColor = '#d1d5db';
             }}
           >
             Login

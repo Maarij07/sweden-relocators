@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { housingData, HousingService } from '@/data/housingData';
+import { housingData } from '@/data/housingData';
 import colors from '@/styles/colors.json';
 
 interface HousingDropdownProps {

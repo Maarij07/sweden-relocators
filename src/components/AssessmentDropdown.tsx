@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { assessmentData, AssessmentService } from '@/data/assessmentData';
+import { assessmentData } from '@/data/assessmentData';
 import colors from '@/styles/colors.json';
 
 interface AssessmentDropdownProps {
