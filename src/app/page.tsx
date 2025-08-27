@@ -625,7 +625,7 @@ export default function Home() {
                   </p>
                 </div>
                 
-                <button className="inline-flex items-center text-gray-900 font-medium text-sm hover:text-gray-700 transition-colors group">
+                <button className="inline-flex items-center text-gray-900 font-medium text-sm hover:text-gray-700 transition-all duration-300 group border border-gray-300 px-3 py-2 rounded-md hover:border-gray-400 hover:shadow-sm">
                   Read More
                   <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -659,7 +659,7 @@ export default function Home() {
                   </p>
                 </div>
                 
-                <button className="inline-flex items-center text-gray-900 font-medium text-sm hover:text-gray-700 transition-colors group">
+                <button className="inline-flex items-center text-gray-900 font-medium text-sm hover:text-gray-700 transition-all duration-300 group border border-gray-300 px-3 py-2 rounded-md hover:border-gray-400 hover:shadow-sm">
                   Read More
                   <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -698,7 +698,763 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Visa Application Process Section */}
+        {/* Relocating to Sweden Section */}
+        <section className="py-12 lg:py-20 px-4 sm:px-6 bg-white">
+          <div className="max-w-7xl mx-auto">
+            {/* First Section - Image Left, Content Right */}
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-16 lg:mb-24">
+              {/* Image */}
+              <div className="relative">
+                <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
+                  {/* Simulated laptop/desktop image */}
+                  <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 relative flex items-center justify-center">
+                    <div className="w-4/5 h-4/5 bg-gray-800 rounded-lg relative overflow-hidden">
+                      {/* Screen content simulation */}
+                      <div className="w-full h-full bg-blue-600 relative">
+                        {/* Video call interface simulation */}
+                        <div className="absolute inset-4 grid grid-cols-3 gap-2">
+                          {[...Array(9)].map((_, i) => (
+                            <div key={i} className="bg-gray-300 rounded-md flex items-center justify-center">
+                              <div className="w-6 h-6 bg-gray-400 rounded-full"></div>
+                            </div>
+                          ))}
+                        </div>
+                        {/* Green notification badge */}
+                        <div className="absolute top-6 left-6 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                          <span className="text-white font-bold text-sm">S</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Decorative plant element */}
+                  <div className="absolute -top-4 -right-4 w-16 h-20 bg-green-400 rounded-full opacity-60"></div>
+                </div>
+              </div>
+              
+              {/* Content */}
+              <div className="space-y-6">
+                <div>
+                  <p className="text-gray-500 font-medium text-xs lg:text-sm tracking-wide uppercase mb-3">
+                    COMPLETE ONLINE PORTAL & APP BASE SOLUTION
+                  </p>
+                  <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                    Relocating To Sweden?
+                  </h2>
+                </div>
+                
+                <div className="space-y-4 text-gray-600 text-sm lg:text-base leading-relaxed">
+                  <p>
+                    Moving abroad is an exciting yet stressful task. People migrate to different countries because of many reasons. People move to other countries to pursue better job opportunities, better education systems, better living standards, health systems or due to their belief - Faith, Family, Future.
+                  </p>
+                  <p>
+                    We provide a wide range of services to individuals, families, and companies to relocate their employees to Sweden.
+                  </p>
+                  <p>
+                    Visa and Immigration services: We can assist with the application process for various types of visas, including work visas, student visas, and family reunification visas. They can also provide guidance on immigration laws and regulations, and help with the documentation required for the application process.
+                  </p>
+                </div>
+                
+                <button className="inline-flex items-center text-gray-900 font-medium text-sm hover:text-gray-700 transition-all duration-300 group border border-gray-300 px-3 py-2 rounded-md hover:border-gray-400 hover:shadow-sm">
+                  Read More
+                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            
+            {/* Second Section - Content Left, Image Right */}
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-16 lg:mb-24">
+              {/* Content */}
+              <div className="space-y-6 lg:order-1">
+                <div>
+                  <p className="text-gray-500 font-medium text-xs lg:text-sm tracking-wide uppercase mb-3">
+                    STEP-BY-STEP ASSISTANCE
+                  </p>
+                  <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                    Departure-Arrival Services
+                  </h2>
+                </div>
+                
+                <div className="space-y-4 text-gray-600 text-sm lg:text-base leading-relaxed">
+                  <p>
+                    <strong>Housing and accommodation services:</strong> We can help find suitable housing for the individual or family, including rental properties or purchasing a home. They can also provide advice on local neighborhoods and the cost of living in the new country.
+                  </p>
+                  <p>
+                    <strong>School and education services:</strong> For families with children, we assist with the enrollment process for local schools, and provide information on educational systems and curriculums.
+                  </p>
+                  <p>
+                    <strong>Cultural and language services:</strong> We can provide information and resources on the culture, customs, and language of the new country, and may offer language classes or cultural training.
+                  </p>
+                  <p>
+                    <strong>Legal services:</strong> We can help with the legal aspects of the move, such as tax and financial advice, and can provide guidance on local laws and regulations.
+                  </p>
+                </div>
+                
+                <button className="inline-flex items-center text-gray-900 font-medium text-sm hover:text-gray-700 transition-all duration-300 group border border-gray-300 px-3 py-2 rounded-md hover:border-gray-400 hover:shadow-sm">
+                  Read More
+                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+              
+              {/* Image */}
+              <div className="relative lg:order-2">
+                <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
+                  {/* Simulated laptop/desktop image */}
+                  <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 relative flex items-center justify-center">
+                    <div className="w-4/5 h-4/5 bg-gray-800 rounded-lg relative overflow-hidden">
+                      {/* Screen content simulation */}
+                      <div className="w-full h-full bg-blue-600 relative">
+                        {/* Video call interface simulation */}
+                        <div className="absolute inset-4 grid grid-cols-3 gap-2">
+                          {[...Array(9)].map((_, i) => (
+                            <div key={i} className="bg-gray-300 rounded-md flex items-center justify-center">
+                              <div className="w-6 h-6 bg-gray-400 rounded-full"></div>
+                            </div>
+                          ))}
+                        </div>
+                        {/* Interface elements */}
+                        <div className="absolute bottom-4 left-4 right-4 h-8 bg-gray-700 rounded flex items-center justify-center">
+                          <div className="w-24 h-2 bg-gray-500 rounded"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Decorative plant element */}
+                  <div className="absolute -top-4 -right-4 w-16 h-20 bg-green-400 rounded-full opacity-60"></div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Fifth Section - Image Left, Content Right */}
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-16 lg:mb-24">
+              {/* Image */}
+              <div className="relative">
+                <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
+                  {/* Simulated laptop/desktop image */}
+                  <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 relative flex items-center justify-center">
+                    <div className="w-4/5 h-4/5 bg-gray-800 rounded-lg relative overflow-hidden">
+                      {/* Screen content simulation */}
+                      <div className="w-full h-full bg-blue-600 relative">
+                        {/* Video call interface simulation */}
+                        <div className="absolute inset-4 grid grid-cols-3 gap-2">
+                          {[...Array(9)].map((_, i) => (
+                            <div key={i} className="bg-gray-300 rounded-md flex items-center justify-center">
+                              <div className="w-6 h-6 bg-gray-400 rounded-full"></div>
+                            </div>
+                          ))}
+                        </div>
+                        {/* Green notification badge */}
+                        <div className="absolute top-6 left-6 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                          <span className="text-white font-bold text-sm">S</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Decorative plant element */}
+                  <div className="absolute -top-4 -right-4 w-16 h-20 bg-green-400 rounded-full opacity-60"></div>
+                </div>
+              </div>
+              
+              {/* Content */}
+              <div className="space-y-6">
+                <div>
+                  <p className="text-gray-500 font-medium text-xs lg:text-sm tracking-wide uppercase mb-3">
+                    WORK PERMIT & EXTENSIONS
+                  </p>
+                  <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                    Applying For Work Permit?
+                  </h2>
+                </div>
+                
+                <div className="space-y-4 text-gray-600 text-sm lg:text-base leading-relaxed">
+                  <p>
+                    <strong>We will help you with preparing permit applications</strong>
+                  </p>
+                  <p>
+                    Whether you are a Swedish company or a foreign employer which is facing problems with working permits inside Sweden We have easy solutions for you. You won't be wasting enough time on how to apply for a Swedish work permit. We will do it for you easily and conveniently. You will not have to wait for 12 months in case of incorrect or incomplete applications. Our company will do it for you in good time. Download our app and discuss your case directly with our team.
+                  </p>
+                </div>
+                
+                <button className="inline-flex items-center text-gray-900 font-medium text-sm hover:text-gray-700 transition-all duration-300 group border border-gray-300 px-3 py-2 rounded-md hover:border-gray-400 hover:shadow-sm">
+                  Read More
+                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            
+            {/* Sixth Section - Content Left, Image Right */}
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-16 lg:mb-24">
+              {/* Content */}
+              <div className="space-y-6 lg:order-1">
+                <div>
+                  <p className="text-gray-500 font-medium text-xs lg:text-sm tracking-wide uppercase mb-3">
+                    BUSINESS & INVESTMENT SOLUTIONS
+                  </p>
+                  <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                    Business In Sweden
+                  </h2>
+                </div>
+                
+                <div className="space-y-4 text-gray-600 text-sm lg:text-base leading-relaxed">
+                  <p>
+                    If you are planning to invest in Sweden, you might need to apply for the residence permit
+                  </p>
+                  <p>
+                    We have a complete solution for all your problems while starting a new business or opening a franchise of your existing business in Sweden. Our company will deliver the service of providing the resident permit that will align with your plan easily. You will need a detailed plan for your business, a bank statement that shows that you have enough capital to invest in your business along with other documents. Our company shall you can support your family and yourself while staying in Sweden during the first two years. Don't forget to use our Assessment tool to find out more.
+                  </p>
+                </div>
+                
+                <button className="inline-flex items-center text-gray-900 font-medium text-sm hover:text-gray-700 transition-all duration-300 group border border-gray-300 px-3 py-2 rounded-md hover:border-gray-400 hover:shadow-sm">
+                  Read More
+                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+              
+              {/* Image */}
+              <div className="relative lg:order-2">
+                <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
+                  {/* Simulated laptop/desktop image */}
+                  <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 relative flex items-center justify-center">
+                    <div className="w-4/5 h-4/5 bg-gray-800 rounded-lg relative overflow-hidden">
+                      {/* Screen content simulation */}
+                      <div className="w-full h-full bg-blue-600 relative">
+                        {/* Video call interface simulation */}
+                        <div className="absolute inset-4 grid grid-cols-3 gap-2">
+                          {[...Array(9)].map((_, i) => (
+                            <div key={i} className="bg-gray-300 rounded-md flex items-center justify-center">
+                              <div className="w-6 h-6 bg-gray-400 rounded-full"></div>
+                            </div>
+                          ))}
+                        </div>
+                        {/* Interface elements */}
+                        <div className="absolute bottom-4 left-4 right-4 h-8 bg-gray-700 rounded flex items-center justify-center">
+                          <div className="w-24 h-2 bg-gray-500 rounded"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Decorative plant element */}
+                  <div className="absolute -top-4 -right-4 w-16 h-20 bg-green-400 rounded-full opacity-60"></div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Seventh Section - Image Left, Content Right */}
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+              {/* Image */}
+              <div className="relative">
+                <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
+                  {/* Simulated laptop/desktop image */}
+                  <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 relative flex items-center justify-center">
+                    <div className="w-4/5 h-4/5 bg-gray-800 rounded-lg relative overflow-hidden">
+                      {/* Screen content simulation */}
+                      <div className="w-full h-full bg-blue-600 relative">
+                        {/* Video call interface simulation */}
+                        <div className="absolute inset-4 grid grid-cols-3 gap-2">
+                          {[...Array(9)].map((_, i) => (
+                            <div key={i} className="bg-gray-300 rounded-md flex items-center justify-center">
+                              <div className="w-6 h-6 bg-gray-400 rounded-full"></div>
+                            </div>
+                          ))}
+                        </div>
+                        {/* Green notification badge */}
+                        <div className="absolute top-6 left-6 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                          <span className="text-white font-bold text-sm">S</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Decorative plant element */}
+                  <div className="absolute -top-4 -right-4 w-16 h-20 bg-green-400 rounded-full opacity-60"></div>
+                </div>
+              </div>
+              
+              {/* Content */}
+              <div className="space-y-6">
+                <div>
+                  <p className="text-gray-500 font-medium text-xs lg:text-sm tracking-wide uppercase mb-3">
+                    EOR & PAYROLL SERVICES
+                  </p>
+                  <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                    EOR & Payroll Services
+                  </h2>
+                </div>
+                
+                <div className="space-y-4 text-gray-600 text-sm lg:text-base leading-relaxed">
+                  <p>
+                    Welcome to Sweden Relocators, your reliable partner for seamless global expansion. Our advanced Employer of Record (EOR) services simplify the process of growing your workforce internationally, helping you overcome common challenges with ease.
+                  </p>
+                  <p>
+                    <strong>How Payroll Services Work:</strong><br />
+                    Global Expansion Made Simple: With our EOR solutions, we manage all aspects of employment, including compliance with local laws, employee contracts, and payroll, allowing you to focus on your business operations without the administrative burden.
+                  </p>
+                  <p>
+                    <strong>Accurate Salary Processing:</strong><br />
+                    We ensure timely and precise salary payments for your employees, considering local tax, benefits, and tax obligations, thereby maintaining payroll accuracy.
+                  </p>
+                  <p>
+                    <strong>Tax Compliance:</strong><br />
+                    Our experts are well-versed in the latest tax regulations and ensure that your operations stay compliant, helping you avoid fines and penalties.
+                  </p>
+                  <p>
+                    <strong>Benefit Administration:</strong><br />
+                    We take care of administering employee benefits, from healthcare to retirement plans, ensuring that the process is efficient for both you and your employees.
+                  </p>
+                </div>
+                
+                <button className="inline-flex items-center text-gray-900 font-medium text-sm hover:text-gray-700 transition-all duration-300 group border border-gray-300 px-3 py-2 rounded-md hover:border-gray-400 hover:shadow-sm">
+                  Read More
+                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Why Choose Us Section - Experienced Team Provide Relocation Services */}
+        <section className="py-16 lg:py-24 px-4 sm:px-6 bg-white">
+          <div className="max-w-7xl mx-auto">
+            {/* Main Why Choose Us Section */}
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-20 lg:mb-28">
+              {/* Left Content - Image */}
+              <div className="relative lg:order-1">
+                <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
+                  {/* Simulated laptop/desktop with video call interface */}
+                  <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 relative flex items-center justify-center">
+                    <div className="w-4/5 h-4/5 bg-gray-900 rounded-lg relative overflow-hidden shadow-2xl">
+                      {/* Screen content simulation - Zoom/Teams interface */}
+                      <div className="w-full h-full bg-blue-50 relative">
+                        {/* Top bar */}
+                        <div className="absolute top-0 left-0 right-0 h-8 bg-gray-800 flex items-center justify-center">
+                          <div className="flex space-x-1">
+                            <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                            <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                          </div>
+                        </div>
+                        
+                        {/* Video call grid */}
+                        <div className="absolute inset-8 top-12 grid grid-cols-3 gap-1">
+                          {[...Array(9)].map((_, i) => (
+                            <div key={i} className="bg-gradient-to-br from-blue-100 to-purple-100 rounded-md flex items-center justify-center relative overflow-hidden">
+                              {i === 0 && (
+                                <div className="absolute inset-0 bg-gradient-to-br from-teal-400 to-blue-500 flex items-center justify-center">
+                                  <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                                    <span className="text-teal-600 font-bold text-sm">S</span>
+                                  </div>
+                                </div>
+                              )}
+                              {i !== 0 && (
+                                <div className="w-6 h-6 bg-gray-300 rounded-full flex items-center justify-center">
+                                  <svg className="w-3 h-3 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                                  </svg>
+                                </div>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                        
+                        {/* Bottom toolbar */}
+                        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                          <div className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center">
+                            <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"/>
+                            </svg>
+                          </div>
+                          <div className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center">
+                            <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/>
+                            </svg>
+                          </div>
+                          <div className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center">
+                            <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M12 9c-1.6 0-3.15.25-4.6.72v3.1c0 .39-.23.74-.56.9-.98.49-1.87 1.12-2.66 1.85-.18.18-.43.28-.68.28-.53 0-.96-.43-.96-.96V9C2.54 9 1.5 7.96 1.5 6.5S2.54 4 4 4s2.5 1.04 2.5 2.5c0 .34-.07.66-.18.96C7.83 6.82 9.86 6.5 12 6.5s4.17.32 5.68.96c-.11-.3-.18-.62-.18-.96C17.5 5.04 18.54 4 20 4s2.5 1.04 2.5 2.5S21.46 9 20 9v5.89c0 .53-.43.96-.96.96-.25 0-.5-.1-.68-.28-.79-.73-1.68-1.36-2.66-1.85-.33-.16-.56-.51-.56-.9V9.72C14.15 9.25 12.6 9 12 9z"/>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Decorative plant element */}
+                  <div className="absolute -top-4 -right-4 w-20 h-24 bg-green-400 rounded-full opacity-60 blur-sm"></div>
+                </div>
+              </div>
+              
+              {/* Right Content */}
+              <div className="space-y-6 lg:order-2">
+                <div>
+                  <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                    Why Choose Us?
+                  </h2>
+                  <div className="space-y-1 mb-6">
+                    <h3 className="text-lg font-semibold text-teal-600">
+                      Experienced Team Provide
+                    </h3>
+                    <h3 className="text-lg font-semibold text-teal-600">
+                      Relocation Services
+                    </h3>
+                  </div>
+                  <p className="text-gray-600 text-base leading-relaxed mb-6">
+                    We are here to provide you complete Relocation Services, 
+                    including Housing, Eira School, Visa Services, Registration 
+                    Social Benefits, Language School, Integration activities etc.
+                  </p>
+                </div>
+                
+                {/* Progress Bars */}
+                <div className="space-y-4">
+                  {/* Business Permit */}
+                  <div>
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-sm font-medium text-gray-900">Business Permit</span>
+                      <span className="text-sm font-bold text-gray-900">90%</span>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-2.5">
+                      <div className="bg-teal-500 h-2.5 rounded-full" style={{width: '90%'}}></div>
+                    </div>
+                  </div>
+                  
+                  {/* Work Permit */}
+                  <div>
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-sm font-medium text-gray-900">Work Permit</span>
+                      <span className="text-sm font-bold text-gray-900">73%</span>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-2.5">
+                      <div className="bg-yellow-500 h-2.5 rounded-full" style={{width: '73%'}}></div>
+                    </div>
+                  </div>
+                  
+                  {/* Family Reunification */}
+                  <div>
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-sm font-medium text-gray-900">Family Reunification</span>
+                      <span className="text-sm font-bold text-gray-900">29%</span>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-2.5">
+                      <div className="bg-orange-500 h-2.5 rounded-full" style={{width: '29%'}}></div>
+                    </div>
+                  </div>
+                  
+                  {/* Study In Sweden */}
+                  <div>
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-sm font-medium text-gray-900">Study in Sweden</span>
+                      <span className="text-sm font-bold text-gray-900">29%</span>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-2.5">
+                      <div className="bg-orange-500 h-2.5 rounded-full" style={{width: '29%'}}></div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Read More Button */}
+                <div className="pt-2">
+                  <button className="inline-flex items-center text-gray-900 font-medium text-sm hover:text-gray-700 transition-all duration-300 group border border-gray-300 px-3 py-2 rounded-md hover:border-gray-400 hover:shadow-sm">
+                    Read More
+                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            {/* Home Loans Section - Content Left, Image Right */}
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-20 lg:mb-28">
+              {/* Content */}
+              <div className="space-y-6 lg:order-1">
+                <div>
+                  <p className="text-gray-500 font-medium text-xs lg:text-sm tracking-wide uppercase mb-3">
+                    INSTANT HOUSING SOLUTIONS
+                  </p>
+                  <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                    Home Loans &<br />Secure Home Rental Solutions
+                  </h2>
+                </div>
+                
+                <div className="space-y-4 text-gray-600 text-base leading-relaxed mb-6">
+                  <p>
+                    The first crucial step when relocating to Sweden is the right home for you and your family. We provide instant housing solutions with our housing partner companies. You can find the apartment or rent out your apartment by providing information on our Housing Solutions page.
+                  </p>
+                </div>
+                
+                <button className="inline-flex items-center text-gray-900 font-medium text-sm hover:text-gray-700 transition-all duration-300 group border border-gray-300 px-3 py-2 rounded-md hover:border-gray-400 hover:shadow-sm">
+                  Read More
+                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+              
+              {/* Image */}
+              <div className="relative lg:order-2">
+                <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
+                  {/* Simulated laptop/desktop with video call interface */}
+                  <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 relative flex items-center justify-center">
+                    <div className="w-4/5 h-4/5 bg-gray-900 rounded-lg relative overflow-hidden shadow-2xl">
+                      {/* Screen content simulation - Zoom/Teams interface */}
+                      <div className="w-full h-full bg-blue-50 relative">
+                        {/* Top bar */}
+                        <div className="absolute top-0 left-0 right-0 h-8 bg-gray-800 flex items-center justify-center">
+                          <div className="flex space-x-1">
+                            <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                            <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                          </div>
+                        </div>
+                        
+                        {/* Video call grid */}
+                        <div className="absolute inset-8 top-12 grid grid-cols-3 gap-1">
+                          {[...Array(9)].map((_, i) => (
+                            <div key={i} className="bg-gradient-to-br from-blue-100 to-purple-100 rounded-md flex items-center justify-center relative overflow-hidden">
+                              {i === 0 && (
+                                <div className="absolute inset-0 bg-gradient-to-br from-teal-400 to-blue-500 flex items-center justify-center">
+                                  <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                                    <span className="text-teal-600 font-bold text-sm">S</span>
+                                  </div>
+                                </div>
+                              )}
+                              {i !== 0 && (
+                                <div className="w-6 h-6 bg-gray-300 rounded-full flex items-center justify-center">
+                                  <svg className="w-3 h-3 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                                  </svg>
+                                </div>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                        
+                        {/* Bottom toolbar */}
+                        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                          <div className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center">
+                            <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"/>
+                            </svg>
+                          </div>
+                          <div className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center">
+                            <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/>
+                            </svg>
+                          </div>
+                          <div className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center">
+                            <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M12 9c-1.6 0-3.15.25-4.6.72v3.1c0 .39-.23.74-.56.9-.98.49-1.87 1.12-2.66 1.85-.18.18-.43.28-.68.28-.53 0-.96-.43-.96-.96V9C2.54 9 1.5 7.96 1.5 6.5S2.54 4 4 4s2.5 1.04 2.5 2.5c0 .34-.07.66-.18.96C7.83 6.82 9.86 6.5 12 6.5s4.17.32 5.68.96c-.11-.3-.18-.62-.18-.96C17.5 5.04 18.54 4 20 4s2.5 1.04 2.5 2.5S21.46 9 20 9v5.89c0 .53-.43.96-.96.96-.25 0-.5-.1-.68-.28-.79-.73-1.68-1.36-2.66-1.85-.33-.16-.56-.51-.56-.9V9.72C14.15 9.25 12.6 9 12 9z"/>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Decorative plant element */}
+                  <div className="absolute -top-4 -right-4 w-20 h-24 bg-green-400 rounded-full opacity-60 blur-sm"></div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Legal Services Section - Image Left, Content Right */}
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-20 lg:mb-28">
+              {/* Image */}
+              <div className="relative lg:order-1">
+                <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
+                  {/* Simulated laptop/desktop with video call interface */}
+                  <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 relative flex items-center justify-center">
+                    <div className="w-4/5 h-4/5 bg-gray-900 rounded-lg relative overflow-hidden shadow-2xl">
+                      {/* Screen content simulation - Zoom/Teams interface */}
+                      <div className="w-full h-full bg-blue-50 relative">
+                        {/* Top bar */}
+                        <div className="absolute top-0 left-0 right-0 h-8 bg-gray-800 flex items-center justify-center">
+                          <div className="flex space-x-1">
+                            <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                            <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                          </div>
+                        </div>
+                        
+                        {/* Video call grid */}
+                        <div className="absolute inset-8 top-12 grid grid-cols-3 gap-1">
+                          {[...Array(9)].map((_, i) => (
+                            <div key={i} className="bg-gradient-to-br from-blue-100 to-purple-100 rounded-md flex items-center justify-center relative overflow-hidden">
+                              {i === 0 && (
+                                <div className="absolute inset-0 bg-gradient-to-br from-teal-400 to-blue-500 flex items-center justify-center">
+                                  <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                                    <span className="text-teal-600 font-bold text-sm">S</span>
+                                  </div>
+                                </div>
+                              )}
+                              {i !== 0 && (
+                                <div className="w-6 h-6 bg-gray-300 rounded-full flex items-center justify-center">
+                                  <svg className="w-3 h-3 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                                  </svg>
+                                </div>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                        
+                        {/* Bottom toolbar */}
+                        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                          <div className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center">
+                            <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"/>
+                            </svg>
+                          </div>
+                          <div className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center">
+                            <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/>
+                            </svg>
+                          </div>
+                          <div className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center">
+                            <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M12 9c-1.6 0-3.15.25-4.6.72v3.1c0 .39-.23.74-.56.9-.98.49-1.87 1.12-2.66 1.85-.18.18-.43.28-.68.28-.53 0-.96-.43-.96-.96V9C2.54 9 1.5 7.96 1.5 6.5S2.54 4 4 4s2.5 1.04 2.5 2.5c0 .34-.07.66-.18.96C7.83 6.82 9.86 6.5 12 6.5s4.17.32 5.68.96c-.11-.3-.18-.62-.18-.96C17.5 5.04 18.54 4 20 4s2.5 1.04 2.5 2.5S21.46 9 20 9v5.89c0 .53-.43.96-.96.96-.25 0-.5-.1-.68-.28-.79-.73-1.68-1.36-2.66-1.85-.33-.16-.56-.51-.56-.9V9.72C14.15 9.25 12.6 9 12 9z"/>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Decorative plant element */}
+                  <div className="absolute -top-4 -right-4 w-20 h-24 bg-green-400 rounded-full opacity-60 blur-sm"></div>
+                </div>
+              </div>
+              
+              {/* Content */}
+              <div className="space-y-6 lg:order-2">
+                <div>
+                  <p className="text-gray-500 font-medium text-xs lg:text-sm tracking-wide uppercase mb-3">
+                    PROFESSIONAL LEGAL SERVICES BY LAWYERS
+                  </p>
+                  <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                    We Can Provide Lawyers For Legal Issues
+                  </h2>
+                </div>
+                
+                <div className="space-y-4 text-gray-600 text-base leading-relaxed mb-6">
+                  <p>
+                    The universe in which people live is full of actions and decisions considered as right and wrong. Legal services are defined as services related to government laws or legal issues such as providing legal advice, filing a case, defending against criminal charges, etc., which lawyers provided. We are working with different individuals lawyers and law firms where they can provide you solutions to your ongoing issues.
+                  </p>
+                </div>
+                
+                <button className="inline-flex items-center text-gray-900 font-medium text-sm hover:text-gray-700 transition-all duration-300 group border border-gray-300 px-3 py-2 rounded-md hover:border-gray-400 hover:shadow-sm">
+                  Read More
+                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            
+            {/* AU Pair Section - Content Left, Image Right */}
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+              {/* Content */}
+              <div className="space-y-6 lg:order-1">
+                <div>
+                  <p className="text-gray-500 font-medium text-xs lg:text-sm tracking-wide uppercase mb-3">
+                    AU PAIR SERVICES FOR NORDIC FAMILIES
+                  </p>
+                  <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                    Solutions For Host Families &<br />AU Pair
+                  </h2>
+                </div>
+                
+                <div className="space-y-4 text-gray-600 text-base leading-relaxed mb-6">
+                  <p>
+                    An Au Pair is a young person living abroad with a Host Family and taking care of the children for accommodation and pocket money.
+                  </p>
+                  <p>
+                    The Au Pair program is an international cultural exchange that gives the possibility to young people to spend some time abroad, learn more about a different culture, improve their skills in a foreign language in exchange for help with duties related to childcare. The term "au pair" from French means "on equal terms", signifying that Au Pair and Host Family treat each other as equals.
+                  </p>
+                </div>
+                
+                <button className="inline-flex items-center text-gray-900 font-medium text-sm hover:text-gray-700 transition-all duration-300 group border border-gray-300 px-3 py-2 rounded-md hover:border-gray-400 hover:shadow-sm">
+                  Read More
+                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+              
+              {/* Image */}
+              <div className="relative lg:order-2">
+                <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
+                  {/* Simulated laptop/desktop with video call interface */}
+                  <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 relative flex items-center justify-center">
+                    <div className="w-4/5 h-4/5 bg-gray-900 rounded-lg relative overflow-hidden shadow-2xl">
+                      {/* Screen content simulation - Zoom/Teams interface */}
+                      <div className="w-full h-full bg-blue-50 relative">
+                        {/* Top bar */}
+                        <div className="absolute top-0 left-0 right-0 h-8 bg-gray-800 flex items-center justify-center">
+                          <div className="flex space-x-1">
+                            <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                            <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                          </div>
+                        </div>
+                        
+                        {/* Video call grid */}
+                        <div className="absolute inset-8 top-12 grid grid-cols-3 gap-1">
+                          {[...Array(9)].map((_, i) => (
+                            <div key={i} className="bg-gradient-to-br from-blue-100 to-purple-100 rounded-md flex items-center justify-center relative overflow-hidden">
+                              {i === 0 && (
+                                <div className="absolute inset-0 bg-gradient-to-br from-teal-400 to-blue-500 flex items-center justify-center">
+                                  <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                                    <span className="text-teal-600 font-bold text-sm">S</span>
+                                  </div>
+                                </div>
+                              )}
+                              {i !== 0 && (
+                                <div className="w-6 h-6 bg-gray-300 rounded-full flex items-center justify-center">
+                                  <svg className="w-3 h-3 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                                  </svg>
+                                </div>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                        
+                        {/* Bottom toolbar */}
+                        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                          <div className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center">
+                            <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"/>
+                            </svg>
+                          </div>
+                          <div className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center">
+                            <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/>
+                            </svg>
+                          </div>
+                          <div className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center">
+                            <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M12 9c-1.6 0-3.15.25-4.6.72v3.1c0 .39-.23.74-.56.9-.98.49-1.87 1.12-2.66 1.85-.18.18-.43.28-.68.28-.53 0-.96-.43-.96-.96V9C2.54 9 1.5 7.96 1.5 6.5S2.54 4 4 4s2.5 1.04 2.5 2.5c0 .34-.07.66-.18.96C7.83 6.82 9.86 6.5 12 6.5s4.17.32 5.68.96c-.11-.3-.18-.62-.18-.96C17.5 5.04 18.54 4 20 4s2.5 1.04 2.5 2.5S21.46 9 20 9v5.89c0 .53-.43.96-.96.96-.25 0-.5-.1-.68-.28-.79-.73-1.68-1.36-2.66-1.85-.33-.16-.56-.51-.56-.9V9.72C14.15 9.25 12.6 9 12 9z"/>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Decorative plant element */}
+                  <div className="absolute -top-4 -right-4 w-20 h-24 bg-green-400 rounded-full opacity-60 blur-sm"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
         <section className="py-12 lg:py-20 px-4 sm:px-6 bg-gray-50">
           <div className="max-w-6xl mx-auto text-center">
             {/* Header with Animated Text */}
@@ -767,20 +1523,6 @@ export default function Home() {
                   </motion.svg>
                 </motion.div>
                 
-                {/* Animated dotted pattern overlay */}
-                <motion.div 
-                  className="absolute inset-0 opacity-10"
-                  animate={{
-                    backgroundPosition: ['0px 0px', '40px 40px', '0px 0px']
-                  }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "linear"
-                  }}
-                >
-                  <div className="w-full h-full" style={{backgroundImage: 'radial-gradient(circle, #059669 1px, transparent 1px)', backgroundSize: '20px 20px'}}></div>
-                </motion.div>
                 
                 <motion.div 
                   className="pt-16"
@@ -832,20 +1574,6 @@ export default function Home() {
                   </motion.svg>
                 </motion.div>
                 
-                {/* Animated dotted pattern overlay */}
-                <motion.div 
-                  className="absolute inset-0 opacity-10"
-                  animate={{
-                    backgroundPosition: ['0px 0px', '40px 40px', '0px 0px']
-                  }}
-                  transition={{
-                    duration: 5,
-                    repeat: Infinity,
-                    ease: "linear"
-                  }}
-                >
-                  <div className="w-full h-full" style={{backgroundImage: 'radial-gradient(circle, #be185d 1px, transparent 1px)', backgroundSize: '20px 20px'}}></div>
-                </motion.div>
                 
                 <motion.div 
                   className="pt-16"
@@ -905,20 +1633,6 @@ export default function Home() {
                   </motion.svg>
                 </motion.div>
                 
-                {/* Animated dotted pattern overlay */}
-                <motion.div 
-                  className="absolute inset-0 opacity-10"
-                  animate={{
-                    backgroundPosition: ['0px 0px', '40px 40px', '0px 0px']
-                  }}
-                  transition={{
-                    duration: 6,
-                    repeat: Infinity,
-                    ease: "linear"
-                  }}
-                >
-                  <div className="w-full h-full" style={{backgroundImage: 'radial-gradient(circle, #ca8a04 1px, transparent 1px)', backgroundSize: '20px 20px'}}></div>
-                </motion.div>
                 
                 <motion.div 
                   className="pt-16"
@@ -977,22 +1691,7 @@ export default function Home() {
                     <path d="M5,20H19V18H5M19,9H15L13,7H9V9H19M19,3H5C3.89,3 3,3.89 3,5V15A2,2 0 0,0 5,17H19A2,2 0 0,0 21,15V5C21,3.89 20.1,3 19,3Z"/>
                   </motion.svg>
                 </motion.div>
-                
-                {/* Animated dotted pattern overlay */}
-                <motion.div 
-                  className="absolute inset-0 opacity-10"
-                  animate={{
-                    backgroundPosition: ['0px 0px', '40px 40px', '0px 0px']
-                  }}
-                  transition={{
-                    duration: 7,
-                    repeat: Infinity,
-                    ease: "linear"
-                  }}
-                >
-                  <div className="w-full h-full" style={{backgroundImage: 'radial-gradient(circle, #1d4ed8 1px, transparent 1px)', backgroundSize: '20px 20px'}}></div>
-                </motion.div>
-                
+                 
                 <motion.div 
                   className="pt-16"
                   initial={{ opacity: 0 }}
@@ -1099,71 +1798,6 @@ export default function Home() {
             </motion.div>
           </div>
         </section>
-
-        {/* Blog News Section with Animations */}
-        <motion.section 
-          className="py-12 lg:py-20 px-4 sm:px-6 bg-white relative overflow-hidden"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          {/* Animated background elements */}
-          <div className="absolute inset-0 pointer-events-none">
-            <motion.div
-              className="absolute top-20 left-10 w-2 h-2 bg-blue-400 rounded-full opacity-20"
-              animate={{
-                y: [0, -20, 0],
-                opacity: [0.2, 0.5, 0.2]
-              }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-            <motion.div
-              className="absolute top-40 right-20 w-3 h-3 bg-purple-400 rounded-full opacity-15"
-              animate={{
-                y: [0, 15, 0],
-                x: [0, -10, 0]
-              }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-            <motion.div
-              className="absolute bottom-20 left-1/4 w-1.5 h-1.5 bg-orange-400 rounded-full opacity-25"
-              animate={{
-                scale: [1, 1.5, 1],
-                opacity: [0.25, 0.6, 0.25]
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-          </div>
-
-          <div className="max-w-4xl mx-auto relative z-10">
-            {/* Animated Header */}
-            <motion.div 
-              className="text-center mb-12"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              viewport={{ once: true }}
-            >
-              <motion.p 
-                className="text-gray-500 font-medium text-xs lg:text-sm tracking-wide uppercase mb-3"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                viewport={{ once: true }}
-              >
                 BLOG CORNER
               </motion.p>
               <motion.h2 
@@ -1644,26 +2278,6 @@ export default function Home() {
           </div>
         </motion.section>
 
-        <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-gray-50">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6 lg:mb-8">Why Choose Us?</h2>
-            <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-8 lg:mb-12 max-w-2xl mx-auto">
-              We have helped thousands of people successfully relocate to Sweden with our comprehensive support and expert guidance.
-            </p>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-              {['Expert Guidance', 'Housing Support', 'Legal Assistance', 'Cultural Integration'].map((item) => (
-                <div key={item} className="text-center">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-yellow-400 rounded-full mx-auto mb-3 lg:mb-4 flex items-center justify-center">
-                    <svg className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-slate-900" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <h3 className="font-semibold text-sm sm:text-base text-gray-900">{item}</h3>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* Footer */}
         <footer className="bg-gray-800 text-white py-12 lg:py-16 px-4 sm:px-6">
