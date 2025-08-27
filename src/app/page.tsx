@@ -1798,6 +1798,25 @@ export default function Home() {
             </motion.div>
           </div>
         </section>
+
+        {/* BLOG CORNER */}
+        <section className="py-16 lg:py-24 px-4 sm:px-6 bg-white">
+          <div className="max-w-7xl mx-auto">
+            {/* Section Header */}
+            <motion.div 
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <motion.p 
+                className="text-gray-500 font-medium text-xs lg:text-sm tracking-wide uppercase mb-4"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
                 BLOG CORNER
               </motion.p>
               <motion.h2 
@@ -2276,7 +2295,7 @@ export default function Home() {
               </motion.button>
             </motion.div>
           </div>
-        </motion.section>
+        </section>
 
 
         {/* Footer */}
