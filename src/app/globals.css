@@ -61,22 +61,7 @@ body {
 .animate-delay-400 { animation-delay: 0.4s; }
 .animate-delay-500 { animation-delay: 0.5s; }
 
-/* Floating animation for service cards */
-@keyframes floating {
-  0% { transform: translateY(0px) rotate(0deg); }
-  25% { transform: translateY(-5px) rotate(0.5deg); }
-  50% { transform: translateY(0px) rotate(0deg); }
-  75% { transform: translateY(5px) rotate(-0.5deg); }
-  100% { transform: translateY(0px) rotate(0deg); }
-}
-
-.float-animation {
-  animation: floating 8s ease-in-out infinite;
-}
-
-.float-animation:nth-child(1) { animation-delay: 0s; }
-.float-animation:nth-child(2) { animation-delay: 1.5s; }
-.float-animation:nth-child(3) { animation-delay: 3s; }
+/* Floating animation removed - cards no longer move */
 
 /* Particle animation */
 @keyframes particle-movement {
@@ -111,13 +96,4 @@ body {
   box-shadow: -10px 10px 32px rgba(0, 0, 0, 0.1);
 }
 
-/* Service icon pulse */
-@keyframes iconPulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
-}
-
-.icon-pulse {
-  animation: iconPulse 3s infinite ease-in-out;
-}
+/* Icon pulse animation removed */

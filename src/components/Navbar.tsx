@@ -209,19 +209,32 @@ const Navbar = () => {
           </div>
           
           <button 
-            className="px-4 py-1.5 rounded-full font-semibold text-xs transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-            style={{
-              background: `linear-gradient(to right, ${colors.colors.primary.yellow[400]}, ${colors.colors.primary.yellow[500]})`,
-              color: colors.colors.background.slate[900]
-            }}
+            className="bg-gray-900 text-white px-4 py-2 rounded-lg font-medium text-xs transition-all duration-300 inline-flex items-center relative overflow-hidden group shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             onMouseEnter={(e) => {
-              (e.target as HTMLElement).style.background = `linear-gradient(to right, ${colors.colors.primary.yellow[500]}, #d97706)`;
+              const gradientOverlay = (e.target as HTMLElement).querySelector('.gradient-overlay') as HTMLElement;
+              if (gradientOverlay) {
+                gradientOverlay.style.opacity = '1';
+                gradientOverlay.style.transform = 'translateX(0%)';
+              }
             }}
             onMouseLeave={(e) => {
-              (e.target as HTMLElement).style.background = `linear-gradient(to right, ${colors.colors.primary.yellow[400]}, ${colors.colors.primary.yellow[500]})`;
+              const gradientOverlay = (e.target as HTMLElement).querySelector('.gradient-overlay') as HTMLElement;
+              if (gradientOverlay) {
+                gradientOverlay.style.opacity = '0';
+                gradientOverlay.style.transform = 'translateX(-100%)';
+              }
             }}
           >
-            Book An Appointment
+            {/* Gradient overlay animation */}
+            <div 
+              className="gradient-overlay absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 opacity-0 transition-all duration-300"
+              style={{ transform: 'translateX(-100%)' }}
+            />
+            
+            {/* Button text with relative z-index */}
+            <span className="relative z-10">
+              Book An Appointment
+            </span>
           </button>
           
           <button 

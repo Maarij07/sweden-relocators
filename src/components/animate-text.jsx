@@ -1,134 +1,46 @@
 'use client';
 
-import { useRef, useEffect, useState } from 'react';
-import { motion, useInView, useAnimation } from 'framer-motion';
+import { useRef, useState, useEffect } from 'react';
+import { motion, useInView } from 'framer-motion';
 
-// Animation variants for character-by-character text animation
-const varContainer = () => ({
-  animate: {
-    transition: {
-      staggerChildren: 0.05,
-      delayChildren: 0.1,
-    },
-  },
-});
-
-const varCharacter = () => ({
+// Simple fade animation variants
+const fadeVariants = {
   initial: { 
-    y: 80, 
     opacity: 0,
-    rotateX: -90,
-    scale: 0.8
+    y: 20
   },
   animate: { 
-    y: 0, 
     opacity: 1,
-    rotateX: 0,
-    scale: 1,
+    y: 0,
     transition: {
-      duration: 0.8,
-      ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
-      type: "spring",
-      stiffness: 200,
-      damping: 15
+      duration: 0.6,
+      ease: "easeOut"
     }
-  },
-});
-
-const varWord = () => ({
-  initial: {},
-  animate: {
-    transition: {
-      staggerChildren: 0.03,
-    },
-  },
-});
+  }
+};
 
 export function AnimateText({ 
   text, 
   component = 'h2',
   className = '',
-  variant = 'character', // 'character', 'word', 'line'
+  variant = 'fade', // simplified to just 'fade'
   once = true,
   amount = 0.3,
-  stagger = 0.05,
+  delay = 0,
   ...other 
 }) {
   const ref = useRef(null);
-  const controls = useAnimation();
   const isInView = useInView(ref, { once, amount });
-
-  useEffect(() => {
-    if (isInView) {
-      controls.start('animate');
-    } else {
-      controls.start('initial');
-    }
-  }, [controls, isInView]);
 
   const Component = motion[component] || motion.div;
 
-  if (variant === 'character') {
-    return (
-      <Component
-        ref={ref}
-        initial="initial"
-        animate={controls}
-        variants={varContainer()}
-        className={className}
-        {...other}
-      >
-        {text.split('').map((char, index) => (
-          <motion.span
-            key={`${char}-${index}`}
-            variants={varCharacter()}
-            style={{ display: 'inline-block' }}
-          >
-            {char === ' ' ? '\u00A0' : char}
-          </motion.span>
-        ))}
-      </Component>
-    );
-  }
-
-  if (variant === 'word') {
-    return (
-      <Component
-        ref={ref}
-        initial="initial"
-        animate={controls}
-        variants={varContainer()}
-        className={className}
-        {...other}
-      >
-        {text.split(' ').map((word, wordIndex) => (
-          <motion.span
-            key={`${word}-${wordIndex}`}
-            variants={varWord()}
-            style={{ display: 'inline-block', marginRight: '0.3em' }}
-          >
-            {word.split('').map((char, charIndex) => (
-              <motion.span
-                key={`${char}-${charIndex}`}
-                variants={varCharacter()}
-                style={{ display: 'inline-block' }}
-              >
-                {char}
-              </motion.span>
-            ))}
-          </motion.span>
-        ))}
-      </Component>
-    );
-  }
-
-  // Default line animation
   return (
     <Component
       ref={ref}
       initial="initial"
-      animate={controls}
-      variants={varCharacter()}
+      animate={isInView ? "animate" : "initial"}
+      variants={fadeVariants}
+      transition={{ delay }}
       className={className}
       {...other}
     >
@@ -149,7 +61,7 @@ export function AnimateGradientText({
     <motion.div
       initial={{ opacity: 0, scale: 0.5 }}
       whileInView={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      transition={{ duration: 0.4, ease: "easeOut" }} // 2x faster (0.8 / 2)
       viewport={{ once: true, amount: 0.3 }}
     >
       <AnimateText
@@ -162,7 +74,7 @@ export function AnimateGradientText({
           WebkitTextFillColor: 'transparent',
           backgroundClip: 'text',
         }}
-        variant="character"
+        variant="fade"
         {...other}
       />
     </motion.div>

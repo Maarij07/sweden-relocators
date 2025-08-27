@@ -224,353 +224,368 @@ export default function Home() {
           </motion.div>
         </section>
 
-        {/* Services section with unique animations */}
-        <MotionViewport className="py-12 lg:py-20 px-4 sm:px-6 bg-gray-50 relative overflow-hidden">
-          {/* Animated particles background */}
-          <div className="absolute inset-0">
-            {/* Blue particles */}
-            <div 
-              className="particle" 
-              style={{
-                '--particle-color': '#3B82F6',
-                '--size': '6px',
-                '--duration': '20s',
-                '--end-x': '400px',
-                '--end-y': '-200px',
-                '--rotation': '360deg',
-                top: '20%',
-                left: '10%',
-                animationDelay: '0s'
-              } as React.CSSProperties}
-            ></div>
-            <div 
-              className="particle" 
-              style={{
-                '--particle-color': '#8B5CF6',
-                '--size': '4px',
-                '--duration': '18s',
-                '--end-x': '-300px',
-                '--end-y': '150px',
-                '--rotation': '-270deg',
-                top: '60%',
-                right: '15%',
-                animationDelay: '3s'
-              } as React.CSSProperties}
-            ></div>
-            <div 
-              className="particle" 
-              style={{
-                '--particle-color': '#10B981',
-                '--size': '8px',
-                '--duration': '22s',
-                '--end-x': '200px',
-                '--end-y': '-300px',
-                '--rotation': '180deg',
-                top: '80%',
-                left: '20%',
-                animationDelay: '6s'
-              } as React.CSSProperties}
-            ></div>
-            <div 
-              className="particle" 
-              style={{
-                '--particle-color': '#F59E0B',
-                '--size': '5px',
-                '--duration': '25s',
-                '--end-x': '-150px',
-                '--end-y': '-400px',
-                '--rotation': '450deg',
-                top: '30%',
-                right: '25%',
-                animationDelay: '9s'
-              } as React.CSSProperties}
-            ></div>
-            <div 
-              className="particle" 
-              style={{
-                '--particle-color': '#EF4444',
-                '--size': '7px',
-                '--duration': '16s',
-                '--end-x': '350px',
-                '--end-y': '250px',
-                '--rotation': '-180deg',
-                top: '40%',
-                left: '5%',
-                animationDelay: '12s'
-              } as React.CSSProperties}
-            ></div>
+        {/* Services section */}
+        <section className="py-12 lg:py-20 px-4 sm:px-6 bg-gray-50 relative overflow-hidden">
+          {/* Animated Background Elements */}
+          <div className="absolute inset-0 overflow-hidden">
+            <motion.div 
+              className="absolute -top-10 -left-10 w-72 h-72 bg-gradient-to-r from-blue-100 to-purple-100 rounded-full opacity-20"
+              animate={{
+                scale: [1, 1.2, 1],
+                rotate: [0, 180, 360],
+              }}
+              transition={{
+                duration: 20,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+            <motion.div 
+              className="absolute -bottom-10 -right-10 w-96 h-96 bg-gradient-to-r from-green-100 to-blue-100 rounded-full opacity-15"
+              animate={{
+                scale: [1.2, 1, 1.2],
+                rotate: [360, 180, 0],
+              }}
+              transition={{
+                duration: 25,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+            <motion.div 
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-purple-100 to-pink-100 rounded-full opacity-10"
+              animate={{
+                scale: [1, 1.3, 1],
+                x: [-20, 20, -20],
+                y: [-10, 10, -10],
+              }}
+              transition={{
+                duration: 15,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
           </div>
 
-          <div className="max-w-7xl mx-auto text-center relative z-10">
-            {/* Header with Animated Text */}
+          <motion.div 
+            className="max-w-7xl mx-auto text-center relative z-10"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            {/* Header */}
             <div className="mb-16">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
+              <motion.p 
+                className="text-gray-500 font-medium text-sm tracking-wide uppercase mb-4"
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
                 viewport={{ once: true }}
               >
-                <p className="text-gray-500 font-medium text-sm tracking-wide uppercase mb-4">
-                  WE EMPOWER YOUR SKILLS TO SUCCEED IN SWEDEN!
-                </p>
-              </motion.div>
-              
-              <AnimateGradientText
-                text="Legal Relocation Solutions For Worldwide Clients"
-                gradient={['#1f2937', '#374151', '#1f2937']} 
-                component="h2"
-                className="text-3xl lg:text-4xl xl:text-5xl"
-                style={{
-                  backgroundImage: 'linear-gradient(45deg, #1f2937, #374151, #1f2937)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                }}
-              />
+                WE EMPOWER YOUR SKILLS TO SUCCEED IN SWEDEN!
+              </motion.p>
+              <motion.h2 
+                className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-4"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                Legal Relocation Solutions For Worldwide Clients
+              </motion.h2>
             </div>
             
-            {/* Service Cards with Navigation */}
-            <div className="relative">
-              {/* Left Navigation Arrow - Hidden on mobile */}
-              <motion.button 
-                className="hidden lg:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 xl:-translate-x-8 z-20 w-12 h-12 bg-white hover:bg-gray-50 rounded-full items-center justify-center transition-all duration-200 shadow-lg hover:shadow-xl border border-gray-200"
-                whileHover={{ scale: 1.1, rotate: -5 }}
-                whileTap={{ scale: 0.9 }}
+            {/* Service Cards Grid */}
+            <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+              {/* Family Reunification Card */}
+              <motion.div 
+                className="bg-white rounded-2xl shadow-lg overflow-hidden h-full group cursor-pointer"
+                initial={{ opacity: 0, y: 60, scale: 0.8 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ 
+                  duration: 0.8, 
+                  delay: 0.1,
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 15
+                }}
+                viewport={{ once: true }}
+                whileHover={{ 
+                  y: -8, 
+                  scale: 1.02,
+                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.15)"
+                }}
+                whileTap={{ scale: 0.98 }}
               >
-                <svg className="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              </motion.button>
+                <div className="p-6 lg:p-8 text-center flex flex-col h-full">
+                  {/* Profile Image */}
+                  <div className="mb-6">
+                    <motion.div 
+                      className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-blue-400 to-blue-600 overflow-hidden flex items-center justify-center"
+                      whileHover={{ 
+                        scale: 1.1, 
+                        rotate: 5,
+                        boxShadow: "0 20px 25px -5px rgba(59, 130, 246, 0.3)"
+                      }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
+                      <svg 
+                        className="w-8 h-8 text-white" 
+                        fill="currentColor" 
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                      </svg>
+                    </motion.div>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="flex-grow flex flex-col">
+                    <motion.h3 
+                      className="text-xl font-bold text-gray-900 mb-3"
+                      whileHover={{ color: "#2563eb" }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      Family Reunification
+                    </motion.h3>
+                    <motion.p 
+                      className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow"
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      transition={{ duration: 0.6, delay: 0.3 }}
+                      viewport={{ once: true }}
+                    >
+                      Family reunification is a recognized reason for the immigration of family members to a country where one or more family members already have legal status. If a person or an EU citizen has a permanent residence permit or is an EU long-term resident in Sweden with special protection, then they may have the right to invite their family to that country.
+                    </motion.p>
+                  </div>
+                  
+                  {/* Button */}
+                  <motion.button 
+                    className="bg-gray-900 text-white px-6 py-3 rounded-lg font-medium text-sm transition-colors w-auto mt-auto relative overflow-hidden group"
+                    whileHover={{ 
+                      scale: 1.05,
+                      backgroundColor: "#1f2937"
+                    }}
+                    whileTap={{ scale: 0.95 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                  >
+                    <motion.span
+                      className="relative z-10"
+                      animate={{
+                        x: [0, 2, 0]
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                    >
+                      View Details
+                    </motion.span>
+                  </motion.button>
+                </div>
+              </motion.div>
 
-              {/* Right Navigation Arrow - Hidden on mobile */}
-              <motion.button 
-                className="hidden lg:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 xl:translate-x-8 z-20 w-12 h-12 bg-white hover:bg-gray-50 rounded-full items-center justify-center transition-all duration-200 shadow-lg hover:shadow-xl border border-gray-200"
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                whileTap={{ scale: 0.9 }}
+              {/* Visitor Visa Card */}
+              <motion.div 
+                className="bg-white rounded-2xl shadow-lg overflow-hidden h-full group cursor-pointer"
+                initial={{ opacity: 0, y: 60, scale: 0.8 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ 
+                  duration: 0.8, 
+                  delay: 0.2,
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 15
+                }}
+                viewport={{ once: true }}
+                whileHover={{ 
+                  y: -8, 
+                  scale: 1.02,
+                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.15)"
+                }}
+                whileTap={{ scale: 0.98 }}
               >
-                <svg className="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </motion.button>
-
-              {/* Service Cards Grid with unique animations */}
-              <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
-                {/* Family Reunification Card */}
-                <div className="card-3d-container float-animation">
-                  <motion.div 
-                    className="bg-white rounded-2xl shadow-lg overflow-hidden h-full card-3d relative"
-                    initial={{ opacity: 0, y: 50, rotateX: 25 }}
-                    whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-                    transition={{ duration: 0.8, delay: 0.1 }}
-                    whileHover={{ 
-                      y: -10,
-                      transition: { duration: 0.3 }
-                    }}
-                  >
-                    {/* Glowing border effect */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-500 to-blue-600 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-sm"></div>
-                    
-                    <div className="p-6 lg:p-8 text-center flex flex-col h-full relative z-10">
-                      {/* Profile Image with pulsing animation */}
-                      <div className="mb-6">
-                        <motion.div 
-                          className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-blue-200 to-blue-300 overflow-hidden icon-pulse"
-                          whileHover={{ scale: 1.2, rotate: 360 }}
-                          transition={{ duration: 0.6 }}
-                        >
-                          <div className="w-full h-full flex items-center justify-center relative">
-                            {/* Animated background */}
-                            <motion.div 
-                              className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full"
-                              animate={{ rotate: 360 }}
-                              transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                            ></motion.div>
-                            <svg className="w-8 h-8 text-white relative z-10" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                            </svg>
-                          </div>
-                        </motion.div>
-                      </div>
-                      
-                      {/* Content that grows */}
-                      <div className="flex-grow flex flex-col">
-                        <motion.h3 
-                          className="text-xl font-bold text-gray-900 mb-3"
-                          whileHover={{ scale: 1.05, color: '#3B82F6' }}
-                        >
-                          Family Reunification
-                        </motion.h3>
-                        <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
-                          Family reunification is a recognized reason for the immigration of family members to a country where one or more family members already have legal status. If a person or an EU citizen has a permanent residence permit or is an EU long-term resident in Sweden with special protection, then they may have the right to invite their family to that country.
-                        </p>
-                      </div>
-                      
-                      {/* Animated button */}
-                      <motion.button 
-                        className="bg-gray-900 text-white px-6 py-3 rounded-lg font-medium text-sm transition-all duration-300 w-auto mt-auto relative overflow-hidden group"
-                        whileHover={{ 
-                          scale: 1.05,
-                          boxShadow: "0 10px 25px rgba(0, 0, 0, 0.2)"
+                <div className="p-6 lg:p-8 text-center flex flex-col h-full">
+                  {/* Profile Image */}
+                  <div className="mb-6">
+                    <motion.div 
+                      className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-purple-400 to-pink-600 overflow-hidden flex items-center justify-center"
+                      whileHover={{ 
+                        scale: 1.1, 
+                        rotate: -5,
+                        boxShadow: "0 20px 25px -5px rgba(168, 85, 247, 0.3)"
+                      }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
+                      <motion.svg 
+                        className="w-8 h-8 text-white" 
+                        fill="currentColor" 
+                        viewBox="0 0 24 24"
+                        animate={{
+                          scale: [1, 1.05, 1]
                         }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <span className="relative z-10">View Details</span>
-                        <motion.div 
-                          className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600"
-                          initial={{ x: "-100%" }}
-                          whileHover={{ x: "0%" }}
-                          transition={{ duration: 0.3 }}
-                        ></motion.div>
-                      </motion.button>
-                    </div>
-                  </motion.div>
-                </div>
-
-                {/* Visitor Visa Card */}
-                <div className="card-3d-container float-animation">
-                  <motion.div 
-                    className="bg-white rounded-2xl shadow-lg overflow-hidden h-full card-3d relative"
-                    initial={{ opacity: 0, y: 50, rotateX: 25 }}
-                    whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-                    transition={{ duration: 0.8, delay: 0.3 }}
-                    whileHover={{ 
-                      y: -10,
-                      transition: { duration: 0.3 }
-                    }}
-                  >
-                    {/* Glowing border effect */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-purple-400 via-pink-500 to-purple-600 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-sm"></div>
-                    
-                    <div className="p-6 lg:p-8 text-center flex flex-col h-full relative z-10">
-                      {/* Profile Image with pulsing animation */}
-                      <div className="mb-6">
-                        <motion.div 
-                          className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-purple-200 to-purple-300 overflow-hidden icon-pulse"
-                          whileHover={{ scale: 1.2, rotate: -360 }}
-                          transition={{ duration: 0.6 }}
-                        >
-                          <div className="w-full h-full flex items-center justify-center relative">
-                            {/* Animated background */}
-                            <motion.div 
-                              className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-600 rounded-full"
-                              animate={{ rotate: -360 }}
-                              transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-                            ></motion.div>
-                            <svg className="w-8 h-8 text-white relative z-10" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                            </svg>
-                          </div>
-                        </motion.div>
-                      </div>
-                      
-                      {/* Content that grows */}
-                      <div className="flex-grow flex flex-col">
-                        <motion.h3 
-                          className="text-xl font-bold text-gray-900 mb-3"
-                          whileHover={{ scale: 1.05, color: '#8B5CF6' }}
-                        >
-                          Visitor Visa
-                        </motion.h3>
-                        <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
-                          For visiting Sweden for a short period you will need a visit visa. Visiting for a short tour, meeting your relatives, visiting friends, or business meetings. You need to consider a short visit to Sweden, which is called the Schengen agreement. Sweden is part of the Schengen agreement. Some non-EU countries because it is also part of the Schengen agreement.
-                        </p>
-                      </div>
-                      
-                      {/* Animated button */}
-                      <motion.button 
-                        className="bg-gray-900 text-white px-6 py-3 rounded-lg font-medium text-sm transition-all duration-300 w-auto mt-auto relative overflow-hidden group"
-                        whileHover={{ 
-                          scale: 1.05,
-                          boxShadow: "0 10px 25px rgba(0, 0, 0, 0.2)"
+                        transition={{
+                          duration: 2.2,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                          delay: 0.5
                         }}
-                        whileTap={{ scale: 0.95 }}
                       >
-                        <span className="relative z-10">View Details</span>
-                        <motion.div 
-                          className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600"
-                          initial={{ x: "-100%" }}
-                          whileHover={{ x: "0%" }}
-                          transition={{ duration: 0.3 }}
-                        ></motion.div>
-                      </motion.button>
-                    </div>
-                  </motion.div>
-                </div>
-
-                {/* Work Permit Card */}
-                <div className="card-3d-container float-animation">
-                  <motion.div 
-                    className="bg-white rounded-2xl shadow-lg overflow-hidden h-full card-3d relative"
-                    initial={{ opacity: 0, y: 50, rotateX: 25 }}
-                    whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-                    transition={{ duration: 0.8, delay: 0.5 }}
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                      </motion.svg>
+                    </motion.div>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="flex-grow flex flex-col">
+                    <motion.h3 
+                      className="text-xl font-bold text-gray-900 mb-3"
+                      whileHover={{ color: "#a855f7" }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      Visitor Visa
+                    </motion.h3>
+                    <motion.p 
+                      className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow"
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      transition={{ duration: 0.6, delay: 0.4 }}
+                      viewport={{ once: true }}
+                    >
+                      For visiting Sweden for a short period you will need a visit visa. Visiting for a short tour, meeting your relatives, visiting friends, or business meetings. You need to consider a short visit to Sweden, which is called the Schengen agreement. Sweden is part of the Schengen agreement. Some non-EU countries because it is also part of the Schengen agreement.
+                    </motion.p>
+                  </div>
+                  
+                  {/* Button */}
+                  <motion.button 
+                    className="bg-gray-900 text-white px-6 py-3 rounded-lg font-medium text-sm transition-colors w-auto mt-auto relative overflow-hidden group"
                     whileHover={{ 
-                      y: -10,
-                      transition: { duration: 0.3 }
+                      scale: 1.05,
+                      backgroundColor: "#1f2937"
                     }}
+                    whileTap={{ scale: 0.95 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
                   >
-                    {/* Glowing border effect */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-green-400 via-teal-500 to-green-600 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-sm"></div>
-                    
-                    <div className="p-6 lg:p-8 text-center flex flex-col h-full relative z-10">
-                      {/* Profile Image with pulsing animation */}
-                      <div className="mb-6">
-                        <motion.div 
-                          className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-green-200 to-green-300 overflow-hidden icon-pulse"
-                          whileHover={{ scale: 1.2, rotate: 360 }}
-                          transition={{ duration: 0.6 }}
-                        >
-                          <div className="w-full h-full flex items-center justify-center relative">
-                            {/* Animated background */}
-                            <motion.div 
-                              className="absolute inset-0 bg-gradient-to-r from-green-400 to-teal-600 rounded-full"
-                              animate={{ rotate: 360 }}
-                              transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-                            ></motion.div>
-                            <svg className="w-8 h-8 text-white relative z-10" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                            </svg>
-                          </div>
-                        </motion.div>
-                      </div>
-                      
-                      {/* Content that grows */}
-                      <div className="flex-grow flex flex-col">
-                        <motion.h3 
-                          className="text-xl font-bold text-gray-900 mb-3"
-                          whileHover={{ scale: 1.05, color: '#10B981' }}
-                        >
-                          Work Permit
-                        </motion.h3>
-                        <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
-                          Currently, every EU country has a different process for issuing work permits to nationals of non-EU countries. Addressing this issue, the European Commission began work in 1999 on developing an EU-wide process for the issuance of work permits. If you are searching for work in Sweden for a work permit, you must have received an official offer of employment from a Swedish employer.
-                        </p>
-                      </div>
-                      
-                      {/* Animated button */}
-                      <motion.button 
-                        className="bg-gray-900 text-white px-6 py-3 rounded-lg font-medium text-sm transition-all duration-300 w-auto mt-auto relative overflow-hidden group"
-                        whileHover={{ 
-                          scale: 1.05,
-                          boxShadow: "0 10px 25px rgba(0, 0, 0, 0.2)"
-                        }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <span className="relative z-10">View Details</span>
-                        <motion.div 
-                          className="absolute inset-0 bg-gradient-to-r from-green-600 to-teal-600"
-                          initial={{ x: "-100%" }}
-                          whileHover={{ x: "0%" }}
-                          transition={{ duration: 0.3 }}
-                        ></motion.div>
-                      </motion.button>
-                    </div>
-                  </motion.div>
+                    <motion.span
+                      className="relative z-10"
+                      animate={{
+                        x: [0, 2, 0]
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: 0.3
+                      }}
+                    >
+                      View Details
+                    </motion.span>
+                  </motion.button>
                 </div>
-              </div>
+              </motion.div>
+
+              {/* Work Permit Card */}
+              <motion.div 
+                className="bg-white rounded-2xl shadow-lg overflow-hidden h-full group cursor-pointer"
+                initial={{ opacity: 0, y: 60, scale: 0.8 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ 
+                  duration: 0.8, 
+                  delay: 0.3,
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 15
+                }}
+                viewport={{ once: true }}
+                whileHover={{ 
+                  y: -8, 
+                  scale: 1.02,
+                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.15)"
+                }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <div className="p-6 lg:p-8 text-center flex flex-col h-full">
+                  {/* Profile Image */}
+                  <div className="mb-6">
+                    <motion.div 
+                      className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-green-400 to-teal-600 overflow-hidden flex items-center justify-center"
+                      whileHover={{ 
+                        scale: 1.1, 
+                        rotate: 5,
+                        boxShadow: "0 20px 25px -5px rgba(34, 197, 94, 0.3)"
+                      }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
+                      <motion.svg 
+                        className="w-8 h-8 text-white" 
+                        fill="currentColor" 
+                        viewBox="0 0 24 24"
+                        animate={{
+                          scale: [1, 1.05, 1]
+                        }}
+                        transition={{
+                          duration: 1.8,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                          delay: 1
+                        }}
+                      >
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                      </motion.svg>
+                    </motion.div>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="flex-grow flex flex-col">
+                    <motion.h3 
+                      className="text-xl font-bold text-gray-900 mb-3"
+                      whileHover={{ color: "#059669" }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      Work Permit
+                    </motion.h3>
+                    <motion.p 
+                      className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow"
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      transition={{ duration: 0.6, delay: 0.5 }}
+                      viewport={{ once: true }}
+                    >
+                      Currently, every EU country has a different process for issuing work permits to nationals of non-EU countries. Addressing this issue, the European Commission began work in 1999 on developing an EU-wide process for the issuance of work permits. If you are searching for work in Sweden for a work permit, you must have received an official offer of employment from a Swedish employer.
+                    </motion.p>
+                  </div>
+                  
+                  {/* Button */}
+                  <motion.button 
+                    className="bg-gray-900 text-white px-6 py-3 rounded-lg font-medium text-sm transition-colors w-auto mt-auto relative overflow-hidden group"
+                    whileHover={{ 
+                      scale: 1.05,
+                      backgroundColor: "#1f2937"
+                    }}
+                    whileTap={{ scale: 0.95 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                  >
+                    <motion.span
+                      className="relative z-10"
+                      animate={{
+                        x: [0, 2, 0]
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: 0.6
+                      }}
+                    >
+                      View Details
+                    </motion.span>
+                  </motion.button>
+                </div>
+              </motion.div>
             </div>
-          </div>
-        </MotionViewport>
+          </motion.div>
+        </section>
 
         {/* Two-Section Content Layout */}
         <section className="py-12 lg:py-20 px-4 sm:px-6 bg-white">
@@ -1508,19 +1523,17 @@ export default function Home() {
                 <motion.div 
                   className="absolute top-6 left-6 w-12 h-12 bg-green-600 rounded-full flex items-center justify-center"
                   whileHover={{ 
-                    rotate: 360,
                     scale: 1.1,
                     transition: { duration: 0.5 }
                   }}
                 >
-                  <motion.svg 
+                  <svg 
                     className="w-6 h-6 text-white" 
                     fill="currentColor" 
                     viewBox="0 0 24 24"
-                    whileHover={{ scale: 1.2 }}
                   >
                     <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                  </motion.svg>
+                  </svg>
                 </motion.div>
                 
                 
@@ -1559,19 +1572,17 @@ export default function Home() {
                 <motion.div 
                   className="absolute top-6 left-6 w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center"
                   whileHover={{ 
-                    rotate: -360,
                     scale: 1.1,
                     transition: { duration: 0.5 }
                   }}
                 >
-                  <motion.svg 
+                  <svg 
                     className="w-6 h-6 text-white" 
                     fill="currentColor" 
                     viewBox="0 0 24 24"
-                    whileHover={{ scale: 1.2 }}
                   >
                     <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
-                  </motion.svg>
+                  </svg>
                 </motion.div>
                 
                 
@@ -1610,27 +1621,17 @@ export default function Home() {
                 <motion.div 
                   className="absolute top-6 left-6 w-12 h-12 bg-yellow-600 rounded-full flex items-center justify-center"
                   whileHover={{ 
-                    rotate: 360,
                     scale: 1.1,
                     transition: { duration: 0.5 }
                   }}
                 >
-                  <motion.svg 
+                  <svg 
                     className="w-6 h-6 text-white" 
                     fill="currentColor" 
                     viewBox="0 0 24 24"
-                    whileHover={{ scale: 1.2 }}
-                    animate={{ 
-                      rotate: [0, 5, 0, -5, 0] 
-                    }}
-                    transition={{ 
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: "easeInOut" 
-                    }}
                   >
                     <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,16.5L6.5,12L7.91,10.59L11,13.67L16.59,8.09L18,9.5L11,16.5Z"/>
-                  </motion.svg>
+                  </svg>
                 </motion.div>
                 
                 
@@ -1669,27 +1670,17 @@ export default function Home() {
                 <motion.div 
                   className="absolute top-6 left-6 w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center"
                   whileHover={{ 
-                    rotate: -360,
                     scale: 1.1,
                     transition: { duration: 0.5 }
                   }}
                 >
-                  <motion.svg 
+                  <svg 
                     className="w-6 h-6 text-white" 
                     fill="currentColor" 
                     viewBox="0 0 24 24"
-                    whileHover={{ scale: 1.2 }}
-                    animate={{ 
-                      y: [0, -2, 0, 2, 0] 
-                    }}
-                    transition={{ 
-                      duration: 3,
-                      repeat: Infinity,
-                      ease: "easeInOut" 
-                    }}
                   >
                     <path d="M5,20H19V18H5M19,9H15L13,7H9V9H19M19,3H5C3.89,3 3,3.89 3,5V15A2,2 0 0,0 5,17H19A2,2 0 0,0 21,15V5C21,3.89 20.1,3 19,3Z"/>
-                  </motion.svg>
+                  </svg>
                 </motion.div>
                  
                 <motion.div 
