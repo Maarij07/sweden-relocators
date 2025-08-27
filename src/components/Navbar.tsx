@@ -3,32 +3,48 @@
 import { useState, useEffect } from 'react';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import colors from '@/styles/colors.json';
+import ServicesDropdown from './ServicesDropdown';
+import HousingDropdown from './HousingDropdown';
+import AssessmentDropdown from './AssessmentDropdown';
 
 const Navbar = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isHousingOpen, setIsHousingOpen] = useState(false);
   const [isAssessmentOpen, setIsAssessmentOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
 
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Element;
+      if (!target.closest('.services-dropdown') && !target.closest('.services-button')) {
+        setIsServicesOpen(false);
+      }
+      if (!target.closest('.housing-dropdown') && !target.closest('.housing-button')) {
+        setIsHousingOpen(false);
+      }
+    };
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    document.addEventListener('mousedown', handleClickOutside);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
   }, []);
 
   return (
     <nav 
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md shadow-sm"
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md"
       style={{
         backgroundColor: isScrolled 
-          ? `${colors.colors.background.slate[900]}cc` // 80% opacity
-          : colors.colors.background.slate[900],
-        borderBottom: isScrolled 
-          ? `1px solid ${colors.colors.border.slate[700]}80` // 50% opacity
-          : 'none'
+          ? '#ffffffcc' // white with 80% opacity
+          : '#ffffff' // pure white
       }}
     >
       <div className="px-8 py-4 flex items-center justify-between">
@@ -47,7 +63,7 @@ const Navbar = () => {
               >★★★</div>
             </div>
           </div>
-          <div className="text-base font-bold" style={{color: colors.colors.text.white}}>
+          <div className="text-base font-bold" style={{color: '#374151'}}>
             SWEDEN <span style={{color: colors.colors.primary.yellow[400]}}>RELOCATORS</span>
           </div>
         </div>
@@ -58,73 +74,100 @@ const Navbar = () => {
             href="#" 
             className="transition-colors font-medium text-sm"
             style={{
-              color: colors.colors.text.gray[200],
+              color: '#374151',
               ':hover': { color: colors.colors.primary.yellow[400] }
             }}
             onMouseEnter={(e) => e.target.style.color = colors.colors.primary.yellow[400]}
-            onMouseLeave={(e) => e.target.style.color = colors.colors.text.gray[200]}
+            onMouseLeave={(e) => e.target.style.color = '#374151'}
           >
             NEW IN SWEDEN
           </a>
           
           {/* Services Dropdown */}
-          <div className="relative">
+          <div 
+            className="relative"
+            onMouseEnter={() => setIsServicesOpen(true)}
+            onMouseLeave={() => setIsServicesOpen(false)}
+          >
             <button
-              className="flex items-center space-x-1 transition-colors font-medium text-sm"
-              style={{color: colors.colors.text.gray[200]}}
-              onClick={() => setIsServicesOpen(!isServicesOpen)}
+              className="services-button flex items-center space-x-1 transition-colors font-medium text-sm"
+              style={{color: '#000000'}}
               onMouseEnter={(e) => e.target.style.color = colors.colors.primary.yellow[400]}
-              onMouseLeave={(e) => e.target.style.color = colors.colors.text.gray[200]}
+              onMouseLeave={(e) => e.target.style.color = '#000000'}
             >
               <span>SERVICES</span>
-              <ChevronDownIcon className="w-3 h-3" />
+              <ChevronDownIcon className="w-3 h-3" style={{color: '#000000'}} />
             </button>
+            <div className="services-dropdown">
+              <ServicesDropdown 
+                isOpen={isServicesOpen}
+                onClose={() => setIsServicesOpen(false)}
+              />
+            </div>
           </div>
 
           <a 
             href="#" 
             className="transition-colors font-medium text-sm"
-            style={{color: colors.colors.text.gray[200]}}
+            style={{color: '#374151'}}
             onMouseEnter={(e) => e.target.style.color = colors.colors.primary.yellow[400]}
-            onMouseLeave={(e) => e.target.style.color = colors.colors.text.gray[200]}
+            onMouseLeave={(e) => e.target.style.color = '#374151'}
           >
             ABOUT
           </a>
 
           {/* Housing Dropdown */}
-          <div className="relative">
+          <div 
+            className="relative"
+            onMouseEnter={() => setIsHousingOpen(true)}
+            onMouseLeave={() => setIsHousingOpen(false)}
+          >
             <button
-              className="flex items-center space-x-1 transition-colors font-medium text-sm"
-              style={{color: colors.colors.text.gray[200]}}
-              onClick={() => setIsHousingOpen(!isHousingOpen)}
+              className="housing-button flex items-center space-x-1 transition-colors font-medium text-sm"
+              style={{color: '#000000'}}
               onMouseEnter={(e) => e.target.style.color = colors.colors.primary.yellow[400]}
-              onMouseLeave={(e) => e.target.style.color = colors.colors.text.gray[200]}
+              onMouseLeave={(e) => e.target.style.color = '#000000'}
             >
               <span>HOUSING</span>
-              <ChevronDownIcon className="w-3 h-3" />
+              <ChevronDownIcon className="w-3 h-3" style={{color: '#000000'}} />
             </button>
+            <div className="housing-dropdown">
+              <HousingDropdown 
+                isOpen={isHousingOpen}
+                onClose={() => setIsHousingOpen(false)}
+              />
+            </div>
           </div>
 
           {/* Assessment Dropdown */}
-          <div className="relative">
+          <div 
+            className="relative"
+            onMouseEnter={() => setIsAssessmentOpen(true)}
+            onMouseLeave={() => setIsAssessmentOpen(false)}
+          >
             <button
-              className="flex items-center space-x-1 transition-colors font-medium text-sm"
-              style={{color: colors.colors.text.gray[200]}}
-              onClick={() => setIsAssessmentOpen(!isAssessmentOpen)}
+              className="assessment-button flex items-center space-x-1 transition-colors font-medium text-sm"
+              style={{color: '#000000'}}
               onMouseEnter={(e) => e.target.style.color = colors.colors.primary.yellow[400]}
-              onMouseLeave={(e) => e.target.style.color = colors.colors.text.gray[200]}
+              onMouseLeave={(e) => e.target.style.color = '#000000'}
             >
               <span>ASSESSMENT</span>
-              <ChevronDownIcon className="w-3 h-3" />
+              <ChevronDownIcon className="w-3 h-3" style={{color: '#000000'}} />
             </button>
+            <div className="assessment-dropdown">
+              <AssessmentDropdown 
+                isOpen={isAssessmentOpen}
+                onClose={() => setIsAssessmentOpen(false)}
+              />
+            </div>
           </div>
 
           <a 
             href="#" 
             className="transition-colors font-medium text-sm"
-            style={{color: colors.colors.text.gray[200]}}
+            style={{color: '#374151'}}
             onMouseEnter={(e) => e.target.style.color = colors.colors.primary.yellow[400]}
-            onMouseLeave={(e) => e.target.style.color = colors.colors.text.gray[200]}
+            onMouseLeave={(e) => e.target.style.color = '#374151'}
           >
             CONTACT
           </a>
@@ -136,13 +179,13 @@ const Navbar = () => {
           <div 
             className="flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg transition-colors duration-200 cursor-pointer"
             style={{
-              backgroundColor: colors.colors.background.slate[800],
+              backgroundColor: '#f9fafb',
               borderWidth: '1px',
               borderStyle: 'solid',
-              borderColor: colors.colors.border.slate[600]
+              borderColor: '#d1d5db'
             }}
             onMouseEnter={(e) => e.target.style.borderColor = colors.colors.primary.yellow[400]}
-            onMouseLeave={(e) => e.target.style.borderColor = colors.colors.border.slate[600]}
+            onMouseLeave={(e) => e.target.style.borderColor = '#d1d5db'}
           >
             <div className="flex items-center space-x-1.5">
               <div 
@@ -158,11 +201,11 @@ const Navbar = () => {
               </div>
               <span 
                 className="text-xs font-medium"
-                style={{color: colors.colors.text.gray[200]}}
+                style={{color: '#374151'}}
               >English</span>
               <ChevronDownIcon 
                 className="w-3 h-3" 
-                style={{color: colors.colors.text.gray[400]}}
+                style={{color: '#6b7280'}}
               />
             </div>
           </div>
@@ -186,18 +229,18 @@ const Navbar = () => {
           <button 
             className="font-medium text-xs px-3 py-1.5 rounded-lg transition-colors duration-200"
             style={{
-              color: colors.colors.text.gray[200],
+              color: '#374151',
               borderWidth: '1px',
               borderStyle: 'solid',
-              borderColor: colors.colors.border.slate[600]
+              borderColor: '#d1d5db'
             }}
             onMouseEnter={(e) => {
               e.target.style.color = colors.colors.primary.yellow[400];
               e.target.style.borderColor = colors.colors.primary.yellow[400];
             }}
             onMouseLeave={(e) => {
-              e.target.style.color = colors.colors.text.gray[200];
-              e.target.style.borderColor = colors.colors.border.slate[600];
+              e.target.style.color = '#374151';
+              e.target.style.borderColor = '#d1d5db';
             }}
           >
             Login
