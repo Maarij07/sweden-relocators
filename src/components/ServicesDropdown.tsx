@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { servicesData, Service } from '@/data/servicesData';
+import { servicesData } from '@/data/servicesData';
 import colors from '@/styles/colors.json';
 
 interface ServicesDropdownProps {
@@ -120,20 +120,5 @@ const ServicesDropdown: React.FC<ServicesDropdownProps> = ({ isOpen, onClose }) 
   );
 };
 
-// Helper function to get category colors
-const getCategoryColor = (category: Service['category']): string => {
-  switch (category) {
-    case 'visa':
-      return colors.colors.primary.blue[400];
-    case 'business':
-      return colors.colors.primary.yellow[400];
-    case 'family':
-      return '#10b981'; // emerald-500
-    case 'citizenship':
-      return '#8b5cf6'; // violet-500
-    default:
-      return colors.colors.text.gray[400];
-  }
-};
 
 export default ServicesDropdown;
