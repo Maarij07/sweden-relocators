@@ -874,7 +874,7 @@ export default function Home() {
                     <strong>We will help you with preparing permit applications</strong>
                   </p>
                   <p>
-                    Whether you are a Swedish company or a foreign employer which is facing problems with working permits inside Sweden We have easy solutions for you. You won't be wasting enough time on how to apply for a Swedish work permit. We will do it for you easily and conveniently. You will not have to wait for 12 months in case of incorrect or incomplete applications. Our company will do it for you in good time. Download our app and discuss your case directly with our team.
+                    Whether you are a Swedish company or a foreign employer which is facing problems with working permits inside Sweden We have easy solutions for you. You won&apos;t be wasting enough time on how to apply for a Swedish work permit. We will do it for you easily and conveniently. You will not have to wait for 12 months in case of incorrect or incomplete applications. Our company will do it for you in good time. Download our app and discuss your case directly with our team.
                   </p>
                 </div>
                 
@@ -905,7 +905,7 @@ export default function Home() {
                     If you are planning to invest in Sweden, you might need to apply for the residence permit
                   </p>
                   <p>
-                    We have a complete solution for all your problems while starting a new business or opening a franchise of your existing business in Sweden. Our company will deliver the service of providing the resident permit that will align with your plan easily. You will need a detailed plan for your business, a bank statement that shows that you have enough capital to invest in your business along with other documents. Our company shall you can support your family and yourself while staying in Sweden during the first two years. Don't forget to use our Assessment tool to find out more.
+                    We have a complete solution for all your problems while starting a new business or opening a franchise of your existing business in Sweden. Our company will deliver the service of providing the resident permit that will align with your plan easily. You will need a detailed plan for your business, a bank statement that shows that you have enough capital to invest in your business along with other documents. Our company shall you can support your family and yourself while staying in Sweden during the first two years. Don&apos;t forget to use our Assessment tool to find out more.
                   </p>
                 </div>
                 
@@ -1374,7 +1374,7 @@ export default function Home() {
                     An Au Pair is a young person living abroad with a Host Family and taking care of the children for accommodation and pocket money.
                   </p>
                   <p>
-                    The Au Pair program is an international cultural exchange that gives the possibility to young people to spend some time abroad, learn more about a different culture, improve their skills in a foreign language in exchange for help with duties related to childcare. The term "au pair" from French means "on equal terms", signifying that Au Pair and Host Family treat each other as equals.
+                    The Au Pair program is an international cultural exchange that gives the possibility to young people to spend some time abroad, learn more about a different culture, improve their skills in a foreign language in exchange for help with duties related to childcare. The term &quot;au pair&quot; from French means &quot;on equal terms&quot;, signifying that Au Pair and Host Family treat each other as equals.
                   </p>
                 </div>
                 
@@ -1798,6 +1798,24 @@ export default function Home() {
             </motion.div>
           </div>
         </section>
+
+        {/* Blog Corner Section */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <motion.div 
+              className="mb-8"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <motion.p 
+                className="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                viewport={{ once: true }}
+              >
                 BLOG CORNER
               </motion.p>
               <motion.h2 
@@ -2276,7 +2294,7 @@ export default function Home() {
               </motion.button>
             </motion.div>
           </div>
-        </motion.section>
+        </section>
 
 
         {/* Footer */}
