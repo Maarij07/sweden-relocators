@@ -12,7 +12,7 @@ import {
   BlogSection,
   Footer
 } from '@/pages/sections';
-import AnimateText from "@/components/ui/AnimateText";
+
 
 export default function Home() {
   return (
