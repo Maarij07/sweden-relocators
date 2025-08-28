@@ -14,57 +14,68 @@ interface ServiceCardProps {
 export function ServiceCard({ title, description, hoverColor, icon, delay = 0 }: ServiceCardProps) {
   return (
     <motion.div 
-      className="bg-white rounded-2xl shadow-lg overflow-hidden h-full group cursor-pointer"
-      whileHover={{ 
-        y: -8,
-        boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-      }}
-      transition={{ 
-        duration: 0.3,
-        ease: "easeOut"
-      }}
+      className="h-full"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay }}
+      viewport={{ once: true }}
     >
-      <div className="p-6 lg:p-8 text-center flex flex-col h-full">
-        {/* Profile Image */}
-        <div className="mb-6">
-          <div className="w-16 h-16 mx-auto rounded-full bg-gray-100 border-2 border-gray-200 overflow-hidden flex items-center justify-center shadow-sm">
-            <div>
-              {icon}
-            </div>
-          </div>
-        </div>
+      {/* Main Card */}
+      <div className="relative rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-xl transition-all duration-300 h-full group overflow-hidden bg-white">
         
-        {/* Content */}
-        <div className="flex-grow flex flex-col">
-          <h3 className="text-xl font-bold text-gray-900 mb-3">
-            {title}
-          </h3>
-          <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
-            {description}
-          </p>
-        </div>
-        
-        {/* Button */}
-        <button className="bg-gray-900 text-white px-6 py-3 rounded-lg font-medium text-sm w-auto mt-auto relative overflow-hidden group inline-flex items-center justify-center gap-2">
-          <span className="relative z-10">
-            View Details
-          </span>
-          <motion.svg 
-            className="w-4 h-4 relative z-10" 
-            fill="none" 
-            stroke="currentColor" 
-            viewBox="0 0 24 24"
-            whileHover={{ 
-              x: 4
-            }}
-            transition={{ 
-              duration: 0.2,
-              ease: "easeOut"
-            }}
+        <div className="p-8 flex flex-col h-full">
+          {/* Icon Container */}
+          <motion.div 
+            className="mb-6"
+            initial={{ scale: 0 }}
+            whileInView={{ scale: 1 }}
+            transition={{ duration: 0.5, delay: delay + 0.2, type: "spring", stiffness: 200 }}
           >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </motion.svg>
-        </button>
+            <div className="text-center">
+              <div className="w-20 h-20 mx-auto flex items-center justify-center rounded-xl shadow-md bg-gray-50 border border-gray-100">
+                {/* Icon */}
+                <div className="relative z-10">
+                  {icon}
+                </div>
+                
+                {/* Subtle shine effect */}
+                <div className="absolute top-2 left-2 right-2 h-3 rounded-t-lg opacity-20 bg-gradient-to-r from-transparent via-white to-transparent" />
+              </div>
+            </div>
+          </motion.div>
+          
+          {/* Content */}
+          <motion.div 
+            className="flex-grow flex flex-col text-center"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: delay + 0.3 }}
+          >
+            <h3 className="text-xl font-semibold text-gray-900 mb-4 tracking-tight">
+              {title}
+            </h3>
+            <p className="text-gray-600 text-sm leading-relaxed mb-8 flex-grow">
+              {description}
+            </p>
+          </motion.div>
+          
+          {/* Professional CTA */}
+          <div className="mt-auto flex justify-center">
+            <button 
+              className="bg-black text-white px-3.5 py-1.5 border rounded-lg font-medium text-xs transition-colors duration-200 hover:bg-gray-700 cursor-pointer h-9"
+              style={{
+                borderWidth: '1px',
+                borderStyle: 'solid',
+                borderColor: 'black',
+                color: 'white'
+              }}
+            >
+              Learn More
+            </button>
+          </div>
+          
+        </div>
+        
       </div>
     </motion.div>
   );

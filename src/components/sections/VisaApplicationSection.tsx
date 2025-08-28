@@ -41,76 +41,80 @@ export function VisaApplicationSection() {
         </div>
         
         {/* Process Cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           <ProcessCard
             title="Sign Up"
             description="You can signup on our website and book an appointment or write us in Message section on My Page!"
-            backgroundColor="bg-green-200"
-            iconColor="bg-green-600"
-            hoverColor="#059669"
+            backgroundColor="bg-gradient-to-br from-slate-50 to-gray-100"
+            iconColor="bg-gradient-to-br from-slate-600 to-gray-700"
+            hoverColor="#475569"
             delay={0.1}
             icon={
-              <svg 
-                className="w-6 h-6 text-white" 
-                fill="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-              </svg>
+              <img 
+                src="/icons/3d-user-signup.png" 
+                alt="Sign Up Icon" 
+                className="w-20 h-20 object-contain"
+                style={{ 
+                  filter: 'drop-shadow(0 8px 16px rgba(0,0,0,0.15))'
+                }}
+              />
             }
           />
 
           <ProcessCard
             title="Upload Documents"
             description="In next step go to My Page and upload all necessary documents."
-            backgroundColor="bg-pink-200"
-            iconColor="bg-pink-600"
-            hoverColor="#be185d"
+            backgroundColor="bg-gradient-to-br from-slate-50 to-gray-100"
+            iconColor="bg-gradient-to-br from-slate-600 to-gray-700"
+            hoverColor="#475569"
             delay={0.2}
             icon={
-              <svg 
-                className="w-6 h-6 text-white" 
-                fill="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
-              </svg>
+              <img 
+                src="/icons/3d-document-upload.png" 
+                alt="Upload Documents Icon" 
+                className="w-20 h-20 object-contain"
+                style={{ 
+                  filter: 'drop-shadow(0 8px 16px rgba(0,0,0,0.15))'
+                }}
+              />
             }
           />
 
           <ProcessCard
             title="File Preparation Process"
             description="One of our experienced Consultant will contact you and prepare your visa file and book your appointment at embassy or Garry's/FedEx office."
-            backgroundColor="bg-yellow-200"
-            iconColor="bg-yellow-600"
-            hoverColor="#ca8a04"
+            backgroundColor="bg-gradient-to-br from-slate-50 to-gray-100"
+            iconColor="bg-gradient-to-br from-slate-600 to-gray-700"
+            hoverColor="#475569"
             delay={0.3}
             icon={
-              <svg 
-                className="w-6 h-6 text-white" 
-                fill="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,16.5L6.5,12L7.91,10.59L11,13.67L16.59,8.09L18,9.5L11,16.5Z"/>
-              </svg>
+              <img 
+                src="/icons/3d-file-process.png" 
+                alt="File Preparation Icon" 
+                className="w-20 h-20 object-contain"
+                style={{ 
+                  filter: 'drop-shadow(0 8px 16px rgba(0,0,0,0.15))'
+                }}
+              />
             }
           />
 
           <ProcessCard
             title="Download or DHL"
             description="Once file is completed we will upload on your portal and send you via DHL. All you need to do is to submit to closest Embassy or Garry's Visa Services office."
-            backgroundColor="bg-blue-200"
-            iconColor="bg-blue-600"
-            hoverColor="#1d4ed8"
+            backgroundColor="bg-gradient-to-br from-slate-50 to-gray-100"
+            iconColor="bg-gradient-to-br from-slate-600 to-gray-700"
+            hoverColor="#475569"
             delay={0.4}
             icon={
-              <svg 
-                className="w-6 h-6 text-white" 
-                fill="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path d="M5,20H19V18H5M19,9H15L13,7H9V9H19M19,3H5C3.89,3 3,3.89 3,5V15A2,2 0 0,0 5,17H19A2,2 0 0,0 21,15V5C21,3.89 20.1,3 19,3Z"/>
-              </svg>
+              <img 
+                src="/icons/3d-download-dhl.png" 
+                alt="Download/DHL Icon" 
+                className="w-20 h-20 object-contain"
+                style={{ 
+                  filter: 'drop-shadow(0 8px 16px rgba(0,0,0,0.15))'
+                }}
+              />
             }
           />
         </div>
@@ -123,25 +127,15 @@ export function VisaApplicationSection() {
           transition={{ duration: 0.6, delay: 0.5 }}
           viewport={{ once: true }}
         >
-          <button className="bg-gray-900 text-white px-6 py-3 rounded-lg font-medium text-sm w-auto relative overflow-hidden group inline-flex items-center justify-center gap-2">
-            <span className="relative z-10">
-              Apply Now
-            </span>
-            <motion.svg 
-              className="w-4 h-4 relative z-10" 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
-              whileHover={{ 
-                x: 4
-              }}
-              transition={{ 
-                duration: 0.2,
-                ease: "easeOut"
-              }}
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </motion.svg>
+          <button 
+            className="bg-black text-white px-3.5 py-1.5 border rounded-lg font-medium text-xs transition-colors duration-200 hover:bg-gray-700 cursor-pointer h-9"
+            style={{
+              borderWidth: '1px',
+              borderStyle: 'solid',
+              borderColor: 'black'
+            }}
+          >
+            Apply Now
           </button>
         </motion.div>
       </div>

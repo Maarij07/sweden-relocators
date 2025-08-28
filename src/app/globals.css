@@ -118,4 +118,92 @@ h3 {
   box-shadow: -10px 10px 32px rgba(0, 0, 0, 0.1);
 }
 
-/* Icon pulse animation removed */
+/* Professional Card Effects */
+
+/* Subtle card glow */
+.card-glow {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.card-glow:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Professional hover transforms */
+.card-hover {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+}
+
+/* Navbar hover effects - Neutral, professional styling */
+.nav-link {
+  color: #1F2937;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #374151 !important;
+  opacity: 0.8;
+}
+
+.nav-link:after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #374151;
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover:after {
+  width: 100%;
+}
+
+.nav-dropdown-button {
+  color: #1F2937;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+.nav-dropdown-button:hover,
+.nav-dropdown-button:hover * {
+  color: #374151 !important;
+  opacity: 0.8;
+}
+
+.nav-dropdown-container:hover .nav-dropdown-button,
+.nav-dropdown-container:hover .nav-dropdown-button * {
+  color: #374151 !important;
+  opacity: 0.8;
+}
+
+.nav-border-hover {
+  border-color: #D1D5DB;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-border-hover:hover {
+  border-color: #9CA3AF;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-login-button {
+  color: #1F2937;
+  border-color: #D1D5DB;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-login-button:hover {
+  border-color: #000000;
+  font-weight: bold;
+}

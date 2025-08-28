@@ -110,6 +110,22 @@ export function ProgressChart({ title, percentage, delay = 0 }: ProgressChartPro
   const [animatedValue, setAnimatedValue] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
 
+  // Define different gradient colors for each bar based on title
+  const getGradientColor = (title: string) => {
+    switch (title) {
+      case 'Business Permit':
+        return 'bg-gradient-to-r from-blue-500 to-blue-600'; // Blue gradient
+      case 'Work Permit':
+        return 'bg-gradient-to-r from-teal-500 to-cyan-500'; // Teal gradient
+      case 'Family Reunification':
+        return 'bg-gradient-to-r from-yellow-400 to-orange-400'; // Yellow-orange gradient
+      case 'Study in Sweden':
+        return 'bg-gradient-to-r from-indigo-500 to-purple-500'; // Purple gradient
+      default:
+        return 'bg-gradient-to-r from-gray-600 to-gray-700'; // Default gray gradient
+    }
+  };
+
   useEffect(() => {
     if (isVisible) {
       const timer = setTimeout(() => {
@@ -137,7 +153,7 @@ export function ProgressChart({ title, percentage, delay = 0 }: ProgressChartPro
       {/* Animated Progress Bar */}
       <div className="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden">
         <motion.div 
-          className="h-full rounded-full bg-black"
+          className={`h-full rounded-full ${getGradientColor(title)}`}
           initial={{ width: '0%' }}
           animate={{ width: isVisible ? `${animatedValue}%` : '0%' }}
           transition={{
