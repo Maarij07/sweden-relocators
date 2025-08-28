@@ -4,9 +4,9 @@ import Navbar from "@/components/Navbar";
 import { motion, useTransform } from 'framer-motion';
 import { useScrollProgress, useTransformY } from '@/hooks/use-scroll-progress';
 import { HeroBackground } from '@/components/hero-background';
-import { MotionContainer, MotionViewport } from '@/components/animate';
+import { MotionContainer } from '@/components/animate';
 import { varFade } from '@/components/animate/variants/fade';
-import { AnimateText, AnimateGradientText } from '@/components/animate-text';
+import { AnimateText } from '@/components/animate-text';
 
 // Animated component for individual elements
 function AnimatedDiv({ children, className = "" }: { children: React.ReactNode; className?: string }) {
@@ -76,7 +76,7 @@ export default function Home() {
                         <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">
                           Relocate To{' '}
                           <motion.span
-                            className="inline-block bg-gradient-to-r from-blue-600 via-teal-500 to-blue-600 bg-clip-text text-transparent font-bold"
+                            className="inline-block bg-gradient-to-r from-green-600 via-teal-500 to-blue-600 bg-clip-text text-transparent font-bold"
                             animate={{ 
                               backgroundPosition: ['0% center', '200% center', '0% center']
                             }}
@@ -112,14 +112,14 @@ export default function Home() {
                       <AnimatedDiv>
                         <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start">
                           <motion.button 
-                            className="bg-gray-900 text-white px-8 py-4 rounded-lg font-medium text-sm hover:bg-gray-800 transition-all duration-300 shadow-lg"
-                            whileHover={{ scale: 1.05 }}
+                            className="bg-gradient-to-r from-green-600 to-teal-500 text-white px-8 py-4 rounded-lg font-medium text-sm hover:from-green-700 hover:to-teal-600 transition-all duration-300 shadow-lg"
+                            whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(0, 167, 111, 0.25)" }}
                             whileTap={{ scale: 0.95 }}
                           >
                             Our Services
                           </motion.button>
                           <motion.button 
-                            className="bg-white text-gray-900 px-8 py-4 rounded-lg font-medium text-sm hover:bg-gray-50 transition-all duration-300 border-2 border-gray-900 shadow-lg"
+                            className="bg-white text-gray-900 px-8 py-4 rounded-lg font-medium text-sm hover:bg-gray-50 transition-all duration-300 border-2 border-green-600 shadow-lg hover:border-green-700"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                           >
