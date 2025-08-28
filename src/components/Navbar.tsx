@@ -189,7 +189,7 @@ const Navbar = () => {
               className="assessment-button flex items-center space-x-1 transition-colors font-medium text-sm cursor-pointer"
               style={{color: colors.colors.text.primary}}
               onMouseEnter={(e) => (e.target as HTMLElement).style.color = colors.colors.primary.main}
-              onMouseLeave={(e) => (e.target as HTMLElement).style.color = colors.colors.text.primary}
+              onMouseLeave={(e) => (e.target as HTMLElement).style.color = 'black'}
             >
               <span>ASSESSMENT</span>
               <motion.div
@@ -201,7 +201,7 @@ const Navbar = () => {
                   ease: "easeInOut"
                 }}
               >
-                <ChevronDownIcon className="w-3 h-3" style={{color: colors.colors.text.primary}} />
+                <ChevronDownIcon className="w-3 h-3" style={{color: 'black'}} />
               </motion.div>
             </button>
             <div className="assessment-dropdown">
@@ -234,19 +234,19 @@ const Navbar = () => {
               borderStyle: 'solid',
               borderColor: colors.colors.grey[300]
             }}
-            onMouseEnter={(e) => (e.target as HTMLElement).style.borderColor = colors.colors.primary.main}
+            onMouseEnter={(e) => (e.target as HTMLElement).style.borderColor = 'black'}
             onMouseLeave={(e) => (e.target as HTMLElement).style.borderColor = colors.colors.grey[300]}
           >
             <div className="flex items-center space-x-1.5">
               <div 
                 className="w-3.5 h-2.5 relative rounded-sm"
                 style={{
-                  background: 'linear-gradient(to bottom, #ef4444, #dc2626)'
+                  background: 'black'
                 }}
               >
                 <div 
                   className="w-full h-0.5 absolute top-0.5 rounded-sm"
-                  style={{backgroundColor: colors.colors.text.white}}
+                  style={{backgroundColor: 'black'}}
                 ></div>
               </div>
               <span 
@@ -271,7 +271,7 @@ const Navbar = () => {
           </div>
           
           <button 
-            className="bg-black text-white px-4 py-2 rounded-lg font-medium text-xs transition-colors duration-200 hover:bg-gray-700 cursor-pointer"
+            className="bg-black text-white px-4 py-1.5 rounded-lg font-medium text-xs transition-colors duration-200 hover:bg-gray-700 cursor-pointer"
           >
             Book An Appointment
           </button>

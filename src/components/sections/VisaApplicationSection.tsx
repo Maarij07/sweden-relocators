@@ -115,7 +115,7 @@ export function VisaApplicationSection() {
           />
         </div>
         
-        {/* Apply Now Button with Animations */}
+        {/* Apply Now Button */}
         <motion.div 
           className="flex justify-center"
           initial={{ opacity: 0, y: 30 }}
@@ -123,83 +123,26 @@ export function VisaApplicationSection() {
           transition={{ duration: 0.6, delay: 0.5 }}
           viewport={{ once: true }}
         >
-          <motion.button 
-            className="bg-gray-900 text-white px-8 py-3 rounded-lg font-medium text-sm transition-all duration-300 inline-flex items-center relative overflow-hidden group"
-            whileHover={{ 
-              scale: 1.05,
-              y: -3,
-              boxShadow: "0 10px 25px rgba(0, 0, 0, 0.2)"
-            }}
-            whileTap={{ 
-              scale: 0.95,
-              y: 0
-            }}
-            animate={{
-              boxShadow: [
-                "0 4px 15px rgba(0, 0, 0, 0.1)",
-                "0 6px 20px rgba(0, 0, 0, 0.15)",
-                "0 4px 15px rgba(0, 0, 0, 0.1)"
-              ]
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          >
-            {/* Gradient overlay animation */}
-            <motion.div 
-              className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 opacity-0 group-hover:opacity-100"
-              initial={{ x: "-100%" }}
-              whileHover={{ x: "0%" }}
-              transition={{ duration: 0.3 }}
-            />
-            
-            {/* Button text with relative z-index */}
-            <motion.span 
-              className="relative z-10"
-              whileHover={{ scale: 1.05 }}
-            >
+          <button className="bg-gray-900 text-white px-6 py-3 rounded-lg font-medium text-sm w-auto relative overflow-hidden group inline-flex items-center justify-center gap-2">
+            <span className="relative z-10">
               Apply Now
-            </motion.span>
-            
-            {/* Animated arrow icon */}
+            </span>
             <motion.svg 
-              className="w-4 h-4 ml-2 relative z-10" 
+              className="w-4 h-4 relative z-10" 
               fill="none" 
               stroke="currentColor" 
               viewBox="0 0 24 24"
               whileHover={{ 
-                rotate: 180,
-                x: 4,
-                transition: { duration: 0.3, ease: "easeInOut" }
+                x: 4
               }}
-              animate={{
-                x: [0, 2, 0]
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                ease: "easeInOut"
+              transition={{ 
+                duration: 0.2,
+                ease: "easeOut"
               }}
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </motion.svg>
-            
-            {/* Pulse effect */}
-            <motion.div
-              className="absolute inset-0 rounded-lg bg-white opacity-0"
-              animate={{
-                opacity: [0, 0.1, 0],
-                scale: [1, 1.02, 1]
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-          </motion.button>
+          </button>
         </motion.div>
       </div>
     </section>

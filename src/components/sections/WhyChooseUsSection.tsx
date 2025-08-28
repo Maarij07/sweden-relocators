@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { ContentSection } from '@/components/ui/ContentSection';
+import { ProgressChart } from '@/components/ui/AnimatedChart';
 
 export function WhyChooseUsSection() {
   return (
@@ -95,51 +96,12 @@ export function WhyChooseUsSection() {
               </p>
             </div>
             
-            {/* Progress Bars */}
+            {/* Animated Charts */}
             <div className="space-y-4">
-              {/* Business Permit */}
-              <div>
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-sm font-medium text-gray-900">Business Permit</span>
-                  <span className="text-sm font-bold text-gray-900">90%</span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-2.5">
-                  <div className="bg-teal-500 h-2.5 rounded-full" style={{width: '90%'}}></div>
-                </div>
-              </div>
-              
-              {/* Work Permit */}
-              <div>
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-sm font-medium text-gray-900">Work Permit</span>
-                  <span className="text-sm font-bold text-gray-900">73%</span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-2.5">
-                  <div className="bg-yellow-500 h-2.5 rounded-full" style={{width: '73%'}}></div>
-                </div>
-              </div>
-              
-              {/* Family Reunification */}
-              <div>
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-sm font-medium text-gray-900">Family Reunification</span>
-                  <span className="text-sm font-bold text-gray-900">29%</span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-2.5">
-                  <div className="bg-orange-500 h-2.5 rounded-full" style={{width: '29%'}}></div>
-                </div>
-              </div>
-              
-              {/* Study In Sweden */}
-              <div>
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-sm font-medium text-gray-900">Study in Sweden</span>
-                  <span className="text-sm font-bold text-gray-900">29%</span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-2.5">
-                  <div className="bg-orange-500 h-2.5 rounded-full" style={{width: '29%'}}></div>
-                </div>
-              </div>
+              <ProgressChart title="Business Permit" percentage={90} delay={0} />
+              <ProgressChart title="Work Permit" percentage={73} delay={1} />
+              <ProgressChart title="Family Reunification" percentage={29} delay={2} />
+              <ProgressChart title="Study in Sweden" percentage={29} delay={3} />
             </div>
             
             {/* Read More Button */}
