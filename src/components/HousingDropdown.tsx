@@ -93,8 +93,8 @@ const HousingDropdown: React.FC<HousingDropdownProps> = ({ isOpen, onClose }) =>
         <div 
           className="px-4 sm:px-5 lg:px-6 py-2.5 sm:py-3 border-t text-center"
           style={{
-            borderTopColor: colors.colors.border.slate[700],
-            backgroundColor: colors.colors.background.slate[800]
+            borderTopColor: colors.colors.grey[300],
+            backgroundColor: colors.colors.background.neutral
           }}
         >
           <Link
@@ -102,14 +102,14 @@ const HousingDropdown: React.FC<HousingDropdownProps> = ({ isOpen, onClose }) =>
             onClick={onClose}
             className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 rounded-md font-medium text-xs transition-all duration-200"
             style={{
-              backgroundColor: colors.colors.primary.yellow[400],
-              color: colors.colors.background.slate[900]
+              backgroundColor: colors.colors.primary.main,
+              color: colors.colors.primary.contrastText
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = colors.colors.primary.yellow[500];
+              e.currentTarget.style.backgroundColor = colors.colors.primary.dark;
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = colors.colors.primary.yellow[400];
+              e.currentTarget.style.backgroundColor = colors.colors.primary.main;
             }}
           >
             View All Housing Options →

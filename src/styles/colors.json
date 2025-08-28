@@ -1,39 +1,55 @@
 {
   "colors": {
     "primary": {
-      "yellow": {
-        "400": "#facc15",
-        "500": "#eab308"
-      },
-      "blue": {
-        "400": "#60a5fa",
-        "500": "#3b82f6"
-      }
+      "main": "#00A76F",
+      "light": "#22C55E",
+      "dark": "#047857",
+      "contrastText": "#FFFFFF"
+    },
+    "secondary": {
+      "main": "#3B82F6",
+      "light": "#60A5FA",
+      "dark": "#1E40AF",
+      "contrastText": "#FFFFFF"
     },
     "background": {
-      "slate": {
-        "800": "#1e293b",
-        "900": "#0f172a"
-      }
+      "default": "#FFFFFF",
+      "paper": "#FFFFFF",
+      "neutral": "#F8FAFC"
     },
     "text": {
-      "white": "#ffffff",
-      "gray": {
-        "200": "#e5e7eb",
-        "400": "#9ca3af"
-      }
+      "primary": "#1F2937",
+      "secondary": "#6B7280",
+      "disabled": "#9CA3AF",
+      "white": "#FFFFFF"
     },
-    "accent": {
-      "red": {
-        "500": "#ef4444",
-        "600": "#dc2626"
-      }
+    "grey": {
+      "50": "#F9FAFB",
+      "100": "#F3F4F6",
+      "200": "#E5E7EB",
+      "300": "#D1D5DB",
+      "400": "#9CA3AF",
+      "500": "#6B7280",
+      "600": "#4B5563",
+      "700": "#374151",
+      "800": "#1F2937",
+      "900": "#111827"
     },
-    "border": {
-      "slate": {
-        "600": "#475569",
-        "700": "#334155"
-      }
-    }
+    "shadows": {
+      "z1": "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+      "z4": "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
+      "z8": "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
+      "z12": "0 20px 25px -5px rgba(0, 0, 0, 0.1)",
+      "z16": "0 25px 50px -12px rgba(0, 0, 0, 0.15)",
+      "z20": "0 25px 50px -12px rgba(0, 0, 0, 0.2)",
+      "z24": "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+      "primary": "0 8px 16px 0 rgba(0, 167, 111, 0.24)",
+      "secondary": "0 8px 16px 0 rgba(59, 130, 246, 0.24)"
+    },
+    "action": {
+      "hover": "rgba(145, 158, 171, 0.08)",
+      "selected": "rgba(145, 158, 171, 0.16)"
+    },
+    "divider": "rgba(145, 158, 171, 0.24)"
   }
 }

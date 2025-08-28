@@ -60,8 +60,9 @@ export const customShadows = {
 // Typography configuration
 export const typography = {
   fontFamily: [
+    'var(--font-public-sans)',
     'Public Sans',
-    'Inter',
+    'system-ui',
     '-apple-system',
     'BlinkMacSystemFont',
     '"Segoe UI"',
@@ -71,31 +72,67 @@ export const typography = {
     'sans-serif',
   ].join(','),
   h1: {
+    fontFamily: [
+      'var(--font-barlow)',
+      'Barlow',
+      'system-ui',
+      'sans-serif',
+    ].join(','),
     fontWeight: 800,
     lineHeight: 80 / 64,
     fontSize: '2.5rem',
   },
   h2: {
+    fontFamily: [
+      'var(--font-barlow)',
+      'Barlow',
+      'system-ui',
+      'sans-serif',
+    ].join(','),
     fontWeight: 800,
     lineHeight: 64 / 48,
     fontSize: '2rem',
   },
   h3: {
+    fontFamily: [
+      'var(--font-barlow)',
+      'Barlow',
+      'system-ui',
+      'sans-serif',
+    ].join(','),
     fontWeight: 700,
     lineHeight: 1.5,
     fontSize: '1.5rem',
   },
   h4: {
+    fontFamily: [
+      'var(--font-barlow)',
+      'Barlow',
+      'system-ui',
+      'sans-serif',
+    ].join(','),
     fontWeight: 700,
     lineHeight: 1.5,
     fontSize: '1.25rem',
   },
   h5: {
+    fontFamily: [
+      'var(--font-barlow)',
+      'Barlow',
+      'system-ui',
+      'sans-serif',
+    ].join(','),
     fontWeight: 700,
     lineHeight: 1.5,
     fontSize: '1.125rem',
   },
   h6: {
+    fontFamily: [
+      'var(--font-barlow)',
+      'Barlow',
+      'system-ui',
+      'sans-serif',
+    ].join(','),
     fontWeight: 700,
     lineHeight: 28 / 18,
     fontSize: '1rem',
