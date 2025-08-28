@@ -26,6 +26,9 @@ const Navbar = () => {
       if (!target.closest('.housing-dropdown') && !target.closest('.housing-button')) {
         setIsHousingOpen(false);
       }
+      if (!target.closest('.assessment-dropdown') && !target.closest('.assessment-button')) {
+        setIsAssessmentOpen(false);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -53,17 +56,17 @@ const Navbar = () => {
           <div className="relative w-8 h-8">
             <div 
               className="absolute inset-0 border-2 rounded-full"
-              style={{borderColor: colors.colors.primary.yellow[400]}}
+              style={{borderColor: colors.colors.primary.main}}
             ></div>
             {/* Stars around the circle */}
             <div className="absolute inset-1 flex items-center justify-center">
               <div 
-                style={{fontSize: '9px', color: colors.colors.primary.yellow[400]}}
+                style={{fontSize: '9px', color: colors.colors.primary.main}}
               >★★★</div>
             </div>
           </div>
-          <div className="text-base font-bold" style={{color: '#374151'}}>
-            SWEDEN <span style={{color: colors.colors.primary.yellow[400]}}>RELOCATORS</span>
+          <div className="text-base font-bold" style={{color: colors.colors.text.primary}}>
+            SWEDEN <span style={{color: colors.colors.primary.main}}>RELOCATORS</span>
           </div>
         </div>
 
@@ -73,10 +76,10 @@ const Navbar = () => {
             href="#" 
             className="transition-colors font-medium text-sm"
             style={{
-              color: '#374151'
+              color: colors.colors.text.primary
             }}
-            onMouseEnter={(e) => (e.target as HTMLElement).style.color = colors.colors.primary.yellow[400]}
-            onMouseLeave={(e) => (e.target as HTMLElement).style.color = '#374151'}
+            onMouseEnter={(e) => (e.target as HTMLElement).style.color = colors.colors.primary.main}
+            onMouseLeave={(e) => (e.target as HTMLElement).style.color = colors.colors.text.primary}
           >
             NEW IN SWEDEN
           </a>
@@ -89,12 +92,12 @@ const Navbar = () => {
           >
             <button
               className="services-button flex items-center space-x-1 transition-colors font-medium text-sm"
-              style={{color: '#000000'}}
-              onMouseEnter={(e) => (e.target as HTMLElement).style.color = colors.colors.primary.yellow[400]}
-              onMouseLeave={(e) => (e.target as HTMLElement).style.color = '#000000'}
+              style={{color: colors.colors.text.primary}}
+              onMouseEnter={(e) => (e.target as HTMLElement).style.color = colors.colors.primary.main}
+              onMouseLeave={(e) => (e.target as HTMLElement).style.color = colors.colors.text.primary}
             >
               <span>SERVICES</span>
-              <ChevronDownIcon className="w-3 h-3" style={{color: '#000000'}} />
+              <ChevronDownIcon className="w-3 h-3" style={{color: colors.colors.text.primary}} />
             </button>
             <div className="services-dropdown">
               <ServicesDropdown 
@@ -107,9 +110,9 @@ const Navbar = () => {
           <a 
             href="#" 
             className="transition-colors font-medium text-sm"
-            style={{color: '#374151'}}
-            onMouseEnter={(e) => (e.target as HTMLElement).style.color = colors.colors.primary.yellow[400]}
-            onMouseLeave={(e) => (e.target as HTMLElement).style.color = '#374151'}
+            style={{color: colors.colors.text.primary}}
+            onMouseEnter={(e) => (e.target as HTMLElement).style.color = colors.colors.primary.main}
+            onMouseLeave={(e) => (e.target as HTMLElement).style.color = colors.colors.text.primary}
           >
             ABOUT
           </a>
@@ -122,12 +125,12 @@ const Navbar = () => {
           >
             <button
               className="housing-button flex items-center space-x-1 transition-colors font-medium text-sm"
-              style={{color: '#000000'}}
-              onMouseEnter={(e) => (e.target as HTMLElement).style.color = colors.colors.primary.yellow[400]}
-              onMouseLeave={(e) => (e.target as HTMLElement).style.color = '#000000'}
+              style={{color: colors.colors.text.primary}}
+              onMouseEnter={(e) => (e.target as HTMLElement).style.color = colors.colors.primary.main}
+              onMouseLeave={(e) => (e.target as HTMLElement).style.color = colors.colors.text.primary}
             >
               <span>HOUSING</span>
-              <ChevronDownIcon className="w-3 h-3" style={{color: '#000000'}} />
+              <ChevronDownIcon className="w-3 h-3" style={{color: colors.colors.text.primary}} />
             </button>
             <div className="housing-dropdown">
               <HousingDropdown 
@@ -145,12 +148,12 @@ const Navbar = () => {
           >
             <button
               className="assessment-button flex items-center space-x-1 transition-colors font-medium text-sm"
-              style={{color: '#000000'}}
-              onMouseEnter={(e) => (e.target as HTMLElement).style.color = colors.colors.primary.yellow[400]}
-              onMouseLeave={(e) => (e.target as HTMLElement).style.color = '#000000'}
+              style={{color: colors.colors.text.primary}}
+              onMouseEnter={(e) => (e.target as HTMLElement).style.color = colors.colors.primary.main}
+              onMouseLeave={(e) => (e.target as HTMLElement).style.color = colors.colors.text.primary}
             >
               <span>ASSESSMENT</span>
-              <ChevronDownIcon className="w-3 h-3" style={{color: '#000000'}} />
+              <ChevronDownIcon className="w-3 h-3" style={{color: colors.colors.text.primary}} />
             </button>
             <div className="assessment-dropdown">
               <AssessmentDropdown 
@@ -163,9 +166,9 @@ const Navbar = () => {
           <a 
             href="#" 
             className="transition-colors font-medium text-sm"
-            style={{color: '#374151'}}
-            onMouseEnter={(e) => (e.target as HTMLElement).style.color = colors.colors.primary.yellow[400]}
-            onMouseLeave={(e) => (e.target as HTMLElement).style.color = '#374151'}
+            style={{color: colors.colors.text.primary}}
+            onMouseEnter={(e) => (e.target as HTMLElement).style.color = colors.colors.primary.main}
+            onMouseLeave={(e) => (e.target as HTMLElement).style.color = colors.colors.text.primary}
           >
             CONTACT
           </a>
@@ -177,19 +180,19 @@ const Navbar = () => {
           <div 
             className="flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg transition-colors duration-200 cursor-pointer"
             style={{
-              backgroundColor: '#f9fafb',
+              backgroundColor: colors.colors.grey[50],
               borderWidth: '1px',
               borderStyle: 'solid',
-              borderColor: '#d1d5db'
+              borderColor: colors.colors.grey[300]
             }}
-            onMouseEnter={(e) => (e.target as HTMLElement).style.borderColor = colors.colors.primary.yellow[400]}
-            onMouseLeave={(e) => (e.target as HTMLElement).style.borderColor = '#d1d5db'}
+            onMouseEnter={(e) => (e.target as HTMLElement).style.borderColor = colors.colors.primary.main}
+            onMouseLeave={(e) => (e.target as HTMLElement).style.borderColor = colors.colors.grey[300]}
           >
             <div className="flex items-center space-x-1.5">
               <div 
                 className="w-3.5 h-2.5 relative rounded-sm"
                 style={{
-                  background: `linear-gradient(to bottom, ${colors.colors.accent.red[500]}, ${colors.colors.accent.red[600]})`
+                  background: 'linear-gradient(to bottom, #ef4444, #dc2626)'
                 }}
               >
                 <div 
@@ -199,17 +202,21 @@ const Navbar = () => {
               </div>
               <span 
                 className="text-xs font-medium"
-                style={{color: '#374151'}}
+                style={{color: colors.colors.text.primary}}
               >English</span>
               <ChevronDownIcon 
                 className="w-3 h-3" 
-                style={{color: '#6b7280'}}
+                style={{color: colors.colors.text.secondary}}
               />
             </div>
           </div>
           
           <button 
-            className="bg-gray-900 text-white px-4 py-2 rounded-lg font-medium text-xs transition-all duration-300 inline-flex items-center relative overflow-hidden group shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            className="px-4 py-2 rounded-lg font-medium text-xs transition-all duration-300 inline-flex items-center relative overflow-hidden group shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            style={{
+              backgroundColor: colors.colors.grey[900],
+              color: colors.colors.text.white
+            }}
             onMouseEnter={(e) => {
               const gradientOverlay = (e.target as HTMLElement).querySelector('.gradient-overlay') as HTMLElement;
               if (gradientOverlay) {
@@ -227,8 +234,11 @@ const Navbar = () => {
           >
             {/* Gradient overlay animation */}
             <div 
-              className="gradient-overlay absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 opacity-0 transition-all duration-300"
-              style={{ transform: 'translateX(-100%)' }}
+              className="gradient-overlay absolute inset-0 opacity-0 transition-all duration-300"
+              style={{ 
+                background: `linear-gradient(to right, ${colors.colors.secondary.main}, ${colors.colors.primary.main})`,
+                transform: 'translateX(-100%)' 
+              }}
             />
             
             {/* Button text with relative z-index */}
@@ -240,18 +250,18 @@ const Navbar = () => {
           <button 
             className="font-medium text-xs px-3 py-1.5 rounded-lg transition-colors duration-200"
             style={{
-              color: '#374151',
+              color: colors.colors.text.primary,
               borderWidth: '1px',
               borderStyle: 'solid',
-              borderColor: '#d1d5db'
+              borderColor: colors.colors.grey[300]
             }}
             onMouseEnter={(e) => {
-              (e.target as HTMLElement).style.color = colors.colors.primary.yellow[400];
-              (e.target as HTMLElement).style.borderColor = colors.colors.primary.yellow[400];
+              (e.target as HTMLElement).style.color = colors.colors.primary.main;
+              (e.target as HTMLElement).style.borderColor = colors.colors.primary.main;
             }}
             onMouseLeave={(e) => {
-              (e.target as HTMLElement).style.color = '#374151';
-              (e.target as HTMLElement).style.borderColor = '#d1d5db';
+              (e.target as HTMLElement).style.color = colors.colors.text.primary;
+              (e.target as HTMLElement).style.borderColor = colors.colors.grey[300];
             }}
           >
             Login
