@@ -1,6 +1,4 @@
 'use client';
-
-import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import {
   HeroSection,
@@ -11,7 +9,7 @@ import {
   VisaApplicationSection,
   BlogSection,
   Footer
-} from '@/pages/sections';
+} from '@/components/sections';
 
 
 export default function Home() {

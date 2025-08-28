@@ -4,7 +4,6 @@ import { motion, useTransform } from 'framer-motion';
 import { useScrollProgress, useTransformY } from '@/hooks/use-scroll-progress';
 import { HeroBackground } from '@/components/hero-background';
 import { MotionContainer } from '@/components/animate';
-import { AnimatedDiv } from '@/components/ui/AnimatedDiv';
 
 const motionProps = {
   initial: { opacity: 0, y: 24 },

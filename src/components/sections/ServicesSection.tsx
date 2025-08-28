@@ -80,7 +80,6 @@ export function ServicesSection() {
           <ServiceCard
             title="Family Reunification"
             description="Family reunification is a recognized reason for the immigration of family members to a country where one or more family members already have legal status. If a person or an EU citizen has a permanent residence permit or is an EU long-term resident in Sweden with special protection, then they may have the right to invite their family to that country."
-            iconColor="bg-gradient-to-br from-blue-400 to-blue-600"
             hoverColor="rgba(59, 130, 246, 0.3)"
             delay={0.1}
             icon={
@@ -115,7 +114,6 @@ export function ServicesSection() {
           <ServiceCard
             title="Visitor Visa"
             description="For visiting Sweden for a short period you will need a visit visa. Visiting for a short tour, meeting your relatives, visiting friends, or business meetings. You need to consider a short visit to Sweden, which is called the Schengen agreement. Sweden is part of the Schengen agreement. Some non-EU countries because it is also part of the Schengen agreement."
-            iconColor="bg-gradient-to-br from-purple-400 to-pink-600"
             hoverColor="rgba(168, 85, 247, 0.3)"
             delay={0.2}
             icon={
@@ -154,7 +152,6 @@ export function ServicesSection() {
           <ServiceCard
             title="Work Permit"
             description="Currently, every EU country has a different process for issuing work permits to nationals of non-EU countries. Addressing this issue, the European Commission began work in 1999 on developing an EU-wide process for the issuance of work permits. If you are searching for work in Sweden for a work permit, you must have received an official offer of employment from a Swedish employer."
-            iconColor="bg-gradient-to-br from-green-400 to-teal-600"
             hoverColor="rgba(34, 197, 94, 0.3)"
             delay={0.3}
             icon={

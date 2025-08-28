@@ -9,6 +9,7 @@ interface NewsItemProps {
   gradient: string;
   hoverGradient: string;
   hoverColor: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   iconAnimation: any;
   delay: number;
 }

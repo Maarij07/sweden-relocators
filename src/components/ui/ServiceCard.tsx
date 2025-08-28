@@ -6,13 +6,12 @@ import { ReactNode } from 'react';
 interface ServiceCardProps {
   title: string;
   description: string;
-  iconColor: string;
   hoverColor: string;
   icon: ReactNode;
   delay?: number;
 }
 
-export function ServiceCard({ title, description, iconColor, hoverColor, icon, delay = 0 }: ServiceCardProps) {
+export function ServiceCard({ title, description, hoverColor, icon, delay = 0 }: ServiceCardProps) {
   return (
     <motion.div 
       className="bg-white rounded-2xl shadow-lg overflow-hidden h-full group cursor-pointer"
