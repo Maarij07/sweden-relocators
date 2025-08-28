@@ -1,5 +1,6 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import { ContentSection } from '@/components/ui/ContentSection';
 
 export function WhyChooseUsSection() {
@@ -145,9 +146,22 @@ export function WhyChooseUsSection() {
             <div className="pt-2">
               <button className="inline-flex items-center text-gray-900 font-medium text-sm hover:text-gray-700 transition-all duration-300 group border border-gray-300 px-3 py-2 rounded-md hover:border-gray-400 hover:shadow-sm">
                 Read More
-                <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <motion.svg 
+                  className="w-4 h-4 ml-2" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                  whileHover={{ 
+                    rotate: 180,
+                    x: 4
+                  }}
+                  transition={{ 
+                    duration: 0.3,
+                    ease: "easeInOut"
+                  }}
+                >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
+                </motion.svg>
               </button>
             </div>
           </div>

@@ -245,8 +245,9 @@ export function BlogSection() {
                 ease: "easeInOut"
               }}
               whileHover={{
+                rotate: 180,
                 x: 8,
-                transition: { duration: 0.2 }
+                transition: { duration: 0.3, ease: "easeInOut" }
               }}
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

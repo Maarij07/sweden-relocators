@@ -170,8 +170,9 @@ export function VisaApplicationSection() {
               stroke="currentColor" 
               viewBox="0 0 24 24"
               whileHover={{ 
-                x: 3,
-                transition: { duration: 0.2, ease: "easeOut" }
+                rotate: 180,
+                x: 4,
+                transition: { duration: 0.3, ease: "easeInOut" }
               }}
               animate={{
                 x: [0, 2, 0]

@@ -1,5 +1,8 @@
 'use client';
 
+import { motion } from 'framer-motion';
+import { varFade } from '@/components/animate';
+
 interface ContentSectionProps {
   subtitle: string;
   title: string;
@@ -10,7 +13,10 @@ interface ContentSectionProps {
 
 export function ContentSection({ subtitle, title, content, imagePosition, className = "" }: ContentSectionProps) {
   const imageComponent = (
-    <div className={`relative ${imagePosition === 'right' ? 'lg:order-2' : ''}`}>
+    <motion.div 
+      variants={varFade(imagePosition === 'left' ? 'inLeft' : 'inRight', { distance: 24 })}
+      className={`relative ${imagePosition === 'right' ? 'lg:order-2' : ''}`}
+    >
       <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
         {/* Simulated laptop/desktop image */}
         <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 relative flex items-center justify-center">
@@ -35,12 +41,14 @@ export function ContentSection({ subtitle, title, content, imagePosition, classN
         {/* Decorative plant element */}
         <div className="absolute -top-4 -right-4 w-16 h-20 bg-green-400 rounded-full opacity-60"></div>
       </div>
-    </div>
+    </motion.div>
   );
 
   const contentComponent = (
     <div className={`space-y-6 ${imagePosition === 'right' ? 'lg:order-1' : ''}`}>
-      <div>
+      <motion.div
+        variants={varFade('inUp', { distance: 24 })}
+      >
         <p className="text-gray-500 font-medium text-xs lg:text-sm tracking-wide uppercase mb-3">
           {subtitle}
         </p>
@@ -48,20 +56,40 @@ export function ContentSection({ subtitle, title, content, imagePosition, classN
           className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4"
           dangerouslySetInnerHTML={{ __html: title }}
         />
-      </div>
+      </motion.div>
       
       <div className="space-y-4 text-gray-600 text-sm lg:text-base leading-relaxed">
         {content.map((paragraph, index) => (
-          <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }} />
+          <motion.p 
+            key={index} 
+            variants={varFade('inUp', { distance: 24 })}
+            dangerouslySetInnerHTML={{ __html: paragraph }} 
+          />
         ))}
       </div>
       
-      <button className="inline-flex items-center text-gray-900 font-medium text-sm hover:text-gray-700 transition-all duration-300 group border border-gray-300 px-3 py-2 rounded-md hover:border-gray-400 hover:shadow-sm">
+      <motion.button 
+        variants={varFade('inUp', { distance: 24 })}
+        className="inline-flex items-center text-gray-900 font-medium text-sm hover:text-gray-700 transition-all duration-300 group border border-gray-300 px-3 py-2 rounded-md hover:border-gray-400 hover:shadow-sm"
+      >
         Read More
-        <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <motion.svg 
+          className="w-4 h-4 ml-2" 
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24"
+          whileHover={{ 
+            rotate: 180,
+            x: 4
+          }}
+          transition={{ 
+            duration: 0.3,
+            ease: "easeInOut"
+          }}
+        >
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </svg>
-      </button>
+        </motion.svg>
+      </motion.button>
     </div>
   );
 

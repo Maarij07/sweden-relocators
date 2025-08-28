@@ -22,23 +22,15 @@ const HousingDropdown: React.FC<HousingDropdownProps> = ({ isOpen, onClose }) =>
   };
 
   return (
-    <>
-      {/* Backdrop */}
-      <div 
-        className="fixed inset-0 z-40" 
-        onClick={onClose}
-      />
-      
-      {/* Dropdown */}
-      <div 
-        className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 z-50 shadow-xl rounded-lg overflow-hidden border"
-        style={{
-          backgroundColor: '#ffffff',
-          borderColor: '#d1d5db',
-          width: '85vw',
-          maxWidth: '60rem'
-        }}
-      >
+    <div 
+      className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 z-50 shadow-xl rounded-lg overflow-hidden border"
+      style={{
+        backgroundColor: '#ffffff',
+        borderColor: '#d1d5db',
+        width: '85vw',
+        maxWidth: '60rem'
+      }}
+    >
         {/* Housing Grid */}
         <div className="p-3 sm:p-4 lg:p-5">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5">
@@ -100,23 +92,22 @@ const HousingDropdown: React.FC<HousingDropdownProps> = ({ isOpen, onClose }) =>
           <Link
             href="/housing"
             onClick={onClose}
-            className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 rounded-md font-medium text-xs transition-all duration-200"
+            className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 rounded-md font-medium text-xs transition-all duration-200 cursor-pointer"
             style={{
-              backgroundColor: colors.colors.primary.main,
-              color: colors.colors.primary.contrastText
+              backgroundColor: '#000000',
+              color: '#ffffff'
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = colors.colors.primary.dark;
+              e.currentTarget.style.backgroundColor = '#374151';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = colors.colors.primary.main;
+              e.currentTarget.style.backgroundColor = '#000000';
             }}
           >
             View All Housing Options →
           </Link>
         </div>
-      </div>
-    </>
+    </div>
   );
 };
 

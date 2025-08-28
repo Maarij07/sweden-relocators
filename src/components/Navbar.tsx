@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
+import { motion } from 'framer-motion';
 import colors from '@/styles/colors.json';
 import ServicesDropdown from './ServicesDropdown';
 import HousingDropdown from './HousingDropdown';
@@ -87,17 +88,33 @@ const Navbar = () => {
           {/* Services Dropdown */}
           <div 
             className="relative"
-            onMouseEnter={() => setIsServicesOpen(true)}
-            onMouseLeave={() => setIsServicesOpen(false)}
+            onMouseEnter={() => {
+              setIsServicesOpen(true);
+              setIsHousingOpen(false);
+              setIsAssessmentOpen(false);
+            }}
+            onMouseLeave={() => {
+              setTimeout(() => setIsServicesOpen(false), 100);
+            }}
           >
             <button
-              className="services-button flex items-center space-x-1 transition-colors font-medium text-sm"
+              className="services-button flex items-center space-x-1 transition-colors font-medium text-sm cursor-pointer"
               style={{color: colors.colors.text.primary}}
               onMouseEnter={(e) => (e.target as HTMLElement).style.color = colors.colors.primary.main}
               onMouseLeave={(e) => (e.target as HTMLElement).style.color = colors.colors.text.primary}
             >
               <span>SERVICES</span>
-              <ChevronDownIcon className="w-3 h-3" style={{color: colors.colors.text.primary}} />
+              <motion.div
+                animate={{ 
+                  rotate: isServicesOpen ? 180 : 0 
+                }}
+                transition={{ 
+                  duration: 0.3,
+                  ease: "easeInOut"
+                }}
+              >
+                <ChevronDownIcon className="w-3 h-3" style={{color: colors.colors.text.primary}} />
+              </motion.div>
             </button>
             <div className="services-dropdown">
               <ServicesDropdown 
@@ -120,17 +137,33 @@ const Navbar = () => {
           {/* Housing Dropdown */}
           <div 
             className="relative"
-            onMouseEnter={() => setIsHousingOpen(true)}
-            onMouseLeave={() => setIsHousingOpen(false)}
+            onMouseEnter={() => {
+              setIsHousingOpen(true);
+              setIsServicesOpen(false);
+              setIsAssessmentOpen(false);
+            }}
+            onMouseLeave={() => {
+              setTimeout(() => setIsHousingOpen(false), 100);
+            }}
           >
             <button
-              className="housing-button flex items-center space-x-1 transition-colors font-medium text-sm"
+              className="housing-button flex items-center space-x-1 transition-colors font-medium text-sm cursor-pointer"
               style={{color: colors.colors.text.primary}}
               onMouseEnter={(e) => (e.target as HTMLElement).style.color = colors.colors.primary.main}
               onMouseLeave={(e) => (e.target as HTMLElement).style.color = colors.colors.text.primary}
             >
               <span>HOUSING</span>
-              <ChevronDownIcon className="w-3 h-3" style={{color: colors.colors.text.primary}} />
+              <motion.div
+                animate={{ 
+                  rotate: isHousingOpen ? 180 : 0 
+                }}
+                transition={{ 
+                  duration: 0.3,
+                  ease: "easeInOut"
+                }}
+              >
+                <ChevronDownIcon className="w-3 h-3" style={{color: colors.colors.text.primary}} />
+              </motion.div>
             </button>
             <div className="housing-dropdown">
               <HousingDropdown 
@@ -143,17 +176,33 @@ const Navbar = () => {
           {/* Assessment Dropdown */}
           <div 
             className="relative"
-            onMouseEnter={() => setIsAssessmentOpen(true)}
-            onMouseLeave={() => setIsAssessmentOpen(false)}
+            onMouseEnter={() => {
+              setIsAssessmentOpen(true);
+              setIsServicesOpen(false);
+              setIsHousingOpen(false);
+            }}
+            onMouseLeave={() => {
+              setTimeout(() => setIsAssessmentOpen(false), 100);
+            }}
           >
             <button
-              className="assessment-button flex items-center space-x-1 transition-colors font-medium text-sm"
+              className="assessment-button flex items-center space-x-1 transition-colors font-medium text-sm cursor-pointer"
               style={{color: colors.colors.text.primary}}
               onMouseEnter={(e) => (e.target as HTMLElement).style.color = colors.colors.primary.main}
               onMouseLeave={(e) => (e.target as HTMLElement).style.color = colors.colors.text.primary}
             >
               <span>ASSESSMENT</span>
-              <ChevronDownIcon className="w-3 h-3" style={{color: colors.colors.text.primary}} />
+              <motion.div
+                animate={{ 
+                  rotate: isAssessmentOpen ? 180 : 0 
+                }}
+                transition={{ 
+                  duration: 0.3,
+                  ease: "easeInOut"
+                }}
+              >
+                <ChevronDownIcon className="w-3 h-3" style={{color: colors.colors.text.primary}} />
+              </motion.div>
             </button>
             <div className="assessment-dropdown">
               <AssessmentDropdown 
@@ -204,51 +253,31 @@ const Navbar = () => {
                 className="text-xs font-medium"
                 style={{color: colors.colors.text.primary}}
               >English</span>
-              <ChevronDownIcon 
-                className="w-3 h-3" 
-                style={{color: colors.colors.text.secondary}}
-              />
+              <motion.div
+                whileHover={{ 
+                  rotate: 180 
+                }}
+                transition={{ 
+                  duration: 0.3,
+                  ease: "easeInOut"
+                }}
+              >
+                <ChevronDownIcon 
+                  className="w-3 h-3" 
+                  style={{color: colors.colors.text.secondary}}
+                />
+              </motion.div>
             </div>
           </div>
           
           <button 
-            className="px-4 py-2 rounded-lg font-medium text-xs transition-all duration-300 inline-flex items-center relative overflow-hidden group shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-            style={{
-              backgroundColor: colors.colors.grey[900],
-              color: colors.colors.text.white
-            }}
-            onMouseEnter={(e) => {
-              const gradientOverlay = (e.target as HTMLElement).querySelector('.gradient-overlay') as HTMLElement;
-              if (gradientOverlay) {
-                gradientOverlay.style.opacity = '1';
-                gradientOverlay.style.transform = 'translateX(0%)';
-              }
-            }}
-            onMouseLeave={(e) => {
-              const gradientOverlay = (e.target as HTMLElement).querySelector('.gradient-overlay') as HTMLElement;
-              if (gradientOverlay) {
-                gradientOverlay.style.opacity = '0';
-                gradientOverlay.style.transform = 'translateX(-100%)';
-              }
-            }}
+            className="bg-black text-white px-4 py-2 rounded-lg font-medium text-xs transition-colors duration-200 hover:bg-gray-700 cursor-pointer"
           >
-            {/* Gradient overlay animation */}
-            <div 
-              className="gradient-overlay absolute inset-0 opacity-0 transition-all duration-300"
-              style={{ 
-                background: `linear-gradient(to right, ${colors.colors.secondary.main}, ${colors.colors.primary.main})`,
-                transform: 'translateX(-100%)' 
-              }}
-            />
-            
-            {/* Button text with relative z-index */}
-            <span className="relative z-10">
-              Book An Appointment
-            </span>
+            Book An Appointment
           </button>
           
           <button 
-            className="font-medium text-xs px-3 py-1.5 rounded-lg transition-colors duration-200"
+            className="font-medium text-xs px-3 py-1.5 rounded-lg transition-colors duration-200 cursor-pointer"
             style={{
               color: colors.colors.text.primary,
               borderWidth: '1px',

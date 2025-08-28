@@ -15,97 +15,56 @@ export function ServiceCard({ title, description, hoverColor, icon, delay = 0 }:
   return (
     <motion.div 
       className="bg-white rounded-2xl shadow-lg overflow-hidden h-full group cursor-pointer"
-      initial={{ opacity: 0, y: 60, scale: 0.8 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1 }}
-      transition={{ 
-        duration: 0.8, 
-        delay,
-        type: "spring",
-        stiffness: 100,
-        damping: 15
-      }}
-      viewport={{ once: true }}
       whileHover={{ 
-        y: -8, 
-        scale: 1.02,
-        boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.15)"
+        y: -8,
+        boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
       }}
-      whileTap={{ scale: 0.98 }}
+      transition={{ 
+        duration: 0.3,
+        ease: "easeOut"
+      }}
     >
       <div className="p-6 lg:p-8 text-center flex flex-col h-full">
         {/* Profile Image */}
         <div className="mb-6">
-          <motion.div 
-            className={`w-16 h-16 mx-auto rounded-full bg-white border-2 border-gray-200 overflow-hidden flex items-center justify-center shadow-sm`}
-            whileHover={{ 
-              scale: 1.1, 
-              rotate: 5,
-              boxShadow: `0 20px 25px -5px ${hoverColor}`,
-              borderColor: '#9ca3af'
-            }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            <motion.div
-              animate={{
-                scale: [1, 1.05, 1]
-              }}
-              transition={{
-                duration: 2.2,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: delay + 0.5
-              }}
-            >
+          <div className="w-16 h-16 mx-auto rounded-full bg-gray-100 border-2 border-gray-200 overflow-hidden flex items-center justify-center shadow-sm">
+            <div>
               {icon}
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </div>
         
         {/* Content */}
         <div className="flex-grow flex flex-col">
-          <motion.h3 
-            className="text-xl font-bold text-gray-900 mb-3"
-            whileHover={{ color: hoverColor.replace('rgba(', '').replace(', 0.3)', '') }}
-            transition={{ duration: 0.2 }}
-          >
+          <h3 className="text-xl font-bold text-gray-900 mb-3">
             {title}
-          </motion.h3>
-          <motion.p 
-            className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: delay + 0.3 }}
-            viewport={{ once: true }}
-          >
+          </h3>
+          <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
             {description}
-          </motion.p>
+          </p>
         </div>
         
         {/* Button */}
-        <motion.button 
-          className="bg-gray-900 text-white px-6 py-3 rounded-lg font-medium text-sm transition-colors w-auto mt-auto relative overflow-hidden group"
-          whileHover={{ 
-            scale: 1.05,
-            backgroundColor: "#1f2937"
-          }}
-          whileTap={{ scale: 0.95 }}
-          transition={{ type: "spring", stiffness: 400, damping: 17 }}
-        >
-          <motion.span
-            className="relative z-10"
-            animate={{
-              x: [0, 2, 0]
+        <button className="bg-gray-900 text-white px-6 py-3 rounded-lg font-medium text-sm w-auto mt-auto relative overflow-hidden group inline-flex items-center justify-center gap-2">
+          <span className="relative z-10">
+            View Details
+          </span>
+          <motion.svg 
+            className="w-4 h-4 relative z-10" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+            whileHover={{ 
+              x: 4
             }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay
+            transition={{ 
+              duration: 0.2,
+              ease: "easeOut"
             }}
           >
-            View Details
-          </motion.span>
-        </motion.button>
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </motion.svg>
+        </button>
       </div>
     </motion.div>
   );

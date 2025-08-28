@@ -67,7 +67,7 @@ export function HeroSection() {
                     
                     Relocate To{' '}
                     <motion.span
-                      className="inline-block bg-gradient-to-r from-green-600 via-orange-500 to-green-600 bg-clip-text text-transparent font-bold"
+                      className="inline-block bg-gradient-to-r "
                       animate={{ backgroundPosition: '200% center' }}
                       transition={{
                         duration: 20,
@@ -82,8 +82,7 @@ export function HeroSection() {
                       Sweden
                     </motion.span>
                     <br />
-                    <span className="text-gray-700">With Expert Advice</span>
-                  </h1>
+                    With Expert Advice                 </h1>
                 </motion.div>
                 
                 {/* Enhanced animated description */}
@@ -103,31 +102,31 @@ export function HeroSection() {
                   {...motionProps}
                 >
                   <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start">
-                    <motion.button 
-                      className="bg-gradient-to-r from-green-600 to-teal-500 text-white px-8 py-4 rounded-lg font-medium text-sm hover:from-green-700 hover:to-teal-600 transition-all duration-300 shadow-lg flex items-center justify-center gap-2"
-                      whileHover={{ 
-                        scale: 1.05, 
-                        boxShadow: "0 10px 25px rgba(0, 167, 111, 0.25)",
-                        y: -2
-                      }}
-                      whileTap={{ scale: 0.95 }}
+                    <button 
+                      className="bg-black text-white px-8 py-4 rounded-lg font-medium text-sm flex items-center justify-center gap-2 transition-colors duration-200 hover:bg-gray-800"
                     >
-                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <svg 
+                        className="w-5 h-5" 
+                        fill="currentColor" 
+                        viewBox="0 0 24 24"
+                      >
                         <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
                       </svg>
                       Our Services
-                    </motion.button>
-                    <motion.button 
-                      className="bg-white text-gray-900 px-8 py-4 rounded-lg font-medium text-sm hover:bg-gray-50 transition-all duration-300 border-2 border-green-600 shadow-lg hover:border-green-700"
-                      whileHover={{ 
-                        scale: 1.05,
-                        boxShadow: "0 10px 25px rgba(0, 0, 0, 0.1)",
-                        y: -2
-                      }}
-                      whileTap={{ scale: 0.95 }}
+                    </button>
+                    <button 
+                      className="bg-white text-black border border-black px-8 py-4 rounded-lg font-medium text-sm flex items-center justify-center gap-2 transition-colors duration-200 hover:bg-gray-50"
                     >
                       Book an Appointment
-                    </motion.button>
+                      <svg 
+                        className="w-4 h-4" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
                   </div>
                 </motion.div>
               </div>

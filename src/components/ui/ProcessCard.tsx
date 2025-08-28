@@ -24,27 +24,18 @@ export function ProcessCard({
 }: ProcessCardProps) {
   return (
     <motion.div 
-      className={`${backgroundColor} rounded-2xl p-6 text-left relative overflow-hidden cursor-pointer group`}
+      className={`${backgroundColor} rounded-2xl p-6 text-left relative overflow-hidden`}
       initial={{ opacity: 0, scale: 0.8, rotateY: delay % 2 === 0 ? -15 : 15 }}
       whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
       transition={{ duration: 0.8, delay, type: "spring", stiffness: 100 }}
       viewport={{ once: true }}
-      whileHover={{ 
-        scale: 1.05,
-        rotateY: delay % 2 === 0 ? 5 : -5,
-        transition: { duration: 0.3, type: "spring", stiffness: 300 }
-      }}
     >
       {/* Icon badge */}
-      <motion.div 
+      <div 
         className={`absolute top-6 left-6 w-12 h-12 ${iconColor} rounded-full flex items-center justify-center`}
-        whileHover={{ 
-          scale: 1.1,
-          transition: { duration: 0.5 }
-        }}
       >
         {icon}
-      </motion.div>
+      </div>
       
       <motion.div 
         className="pt-16"
@@ -52,12 +43,9 @@ export function ProcessCard({
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: delay + 0.3 }}
       >
-        <motion.h3 
-          className="text-xl font-bold text-gray-900 mb-3"
-          whileHover={{ color: hoverColor }}
-        >
+        <h3 className="text-xl font-bold text-gray-900 mb-3">
           {title}
-        </motion.h3>
+        </h3>
         <p className="text-gray-700 text-sm leading-relaxed">
           {description}
         </p>
