@@ -1,12 +1,12 @@
 'use client';
 
 import { Button } from '@mui/material';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 
 interface ReadMoreButtonProps {
   onClick?: () => void;
   className?: string;
-  variants?: any;
+  variants?: Variants;
   text?: string;
 }
 

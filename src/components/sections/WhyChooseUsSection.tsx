@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { ContentSection } from '@/components/ui/ContentSection';
 import { ProgressChart } from '@/components/ui/AnimatedChart';
 import { ReadMoreButton } from '@/components/ui/ReadMoreButton';

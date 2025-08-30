@@ -97,7 +97,7 @@ const LanguageDropdown: React.FC<LanguageDropdownProps> = ({
           }}
         >
           <div className="p-2 grid grid-cols-2 gap-1">
-            {languages.map((language, index) => (
+            {languages.map((language) => (
               <button
                 key={language.code}
                 onClick={() => {
