@@ -16,103 +16,45 @@ interface LanguageDropdownProps {
   onLanguageSelect: (language: Language) => void;
 }
 
-// Minimalist Flag Components - Simple geometric representations
-const UKFlag = () => (
-  <div className="w-5 h-5 rounded-sm overflow-hidden relative border border-gray-200">
-    <div className="absolute inset-0 bg-blue-600"></div>
-    <div className="absolute inset-0 bg-white" style={{ clipPath: 'polygon(47% 0, 53% 0, 53% 100%, 47% 100%)' }}></div>
-    <div className="absolute inset-0 bg-white" style={{ clipPath: 'polygon(0 47%, 0 53%, 100% 53%, 100% 47%)' }}></div>
-    <div className="absolute inset-0 bg-red-500" style={{ clipPath: 'polygon(49% 0, 51% 0, 51% 100%, 49% 100%)' }}></div>
-    <div className="absolute inset-0 bg-red-500" style={{ clipPath: 'polygon(0 49%, 0 51%, 100% 51%, 100% 49%)' }}></div>
-  </div>
-);
+// Create flag component using flagcdn API
+const createFlagComponent = (languageCode: string) => {
+  // Map language codes to country codes for flagcdn
+  const countryCodeMap: Record<string, string> = {
+    'en': 'gb', // English -> Great Britain
+    'de': 'de', // German -> Germany
+    'da': 'dk', // Danish -> Denmark
+    'sv': 'se', // Swedish -> Sweden
+    'es': 'es', // Spanish -> Spain
+    'ar': 'sa', // Arabic -> Saudi Arabia
+    'fa': 'ir', // Persian -> Iran
+    'el': 'gr', // Greek -> Greece
+    'ur': 'pk', // Urdu -> Pakistan
+    'pa': 'in', // Punjabi -> India
+  };
 
-const GermanFlag = () => (
-  <div className="w-5 h-5 rounded-sm overflow-hidden border border-gray-200">
-    <div className="h-1.5 bg-black"></div>
-    <div className="h-2 bg-red-600"></div>
-    <div className="h-1.5 bg-yellow-400"></div>
-  </div>
-);
-
-const DanishFlag = () => (
-  <div className="w-5 h-5 rounded-sm overflow-hidden relative border border-gray-200">
-    <div className="absolute inset-0 bg-red-600"></div>
-    <div className="absolute left-1.5 top-0 w-0.5 h-full bg-white"></div>
-    <div className="absolute left-0 top-2 w-full h-0.5 bg-white"></div>
-  </div>
-);
-
-const SwedishFlag = () => (
-  <div className="w-5 h-5 rounded-sm overflow-hidden relative border border-gray-200">
-    <div className="absolute inset-0 bg-blue-500"></div>
-    <div className="absolute left-1.5 top-0 w-0.5 h-full bg-yellow-400"></div>
-    <div className="absolute left-0 top-2 w-full h-0.5 bg-yellow-400"></div>
-  </div>
-);
-
-const SpanishFlag = () => (
-  <div className="w-5 h-5 rounded-sm overflow-hidden border border-gray-200">
-    <div className="h-1 bg-red-600"></div>
-    <div className="h-3 bg-yellow-400"></div>
-    <div className="h-1 bg-red-600"></div>
-  </div>
-);
-
-const ArabicFlag = () => (
-  <div className="w-5 h-5 rounded-sm overflow-hidden border border-gray-200">
-    <div className="h-1.5 bg-green-600"></div>
-    <div className="h-2 bg-white"></div>
-    <div className="h-1.5 bg-black"></div>
-  </div>
-);
-
-const PersianFlag = () => (
-  <div className="w-5 h-5 rounded-sm overflow-hidden border border-gray-200">
-    <div className="h-1.5 bg-green-600"></div>
-    <div className="h-2 bg-white"></div>
-    <div className="h-1.5 bg-red-600"></div>
-  </div>
-);
-
-const GreekFlag = () => (
-  <div className="w-5 h-5 rounded-sm overflow-hidden relative border border-gray-200">
-    <div className="absolute inset-0 bg-white">
-      {[...Array(5)].map((_, i) => (
-        <div key={i} className="h-0.5 bg-blue-600" style={{ marginTop: `${i * 4}px` }}></div>
-      ))}
-    </div>
-    <div className="absolute top-0 left-0 w-2 h-2 bg-blue-600"></div>
-  </div>
-);
-
-const UrduFlag = () => (
-  <div className="w-5 h-5 rounded-sm overflow-hidden relative border border-gray-200">
-    <div className="absolute inset-0 bg-green-600"></div>
-    <div className="absolute left-0 top-0 w-1.5 h-full bg-white"></div>
-    <div className="absolute left-0.5 top-1.5 w-2 h-2 flex items-center justify-center text-white text-xs">☪</div>
-  </div>
-);
-
-const PunjabiFlag = () => (
-  <div className="w-5 h-5 rounded-sm overflow-hidden border border-gray-200">
-    <div className="h-1.5 bg-orange-500"></div>
-    <div className="h-2 bg-white"></div>
-    <div className="h-1.5 bg-green-600"></div>
-  </div>
-);
+  const countryCode = countryCodeMap[languageCode] || 'gb';
+  
+  return (
+    <img 
+      src={`https://flagcdn.com/h20/${countryCode}.png`}
+      alt={`${languageCode} flag`}
+      className="w-7 h-5 rounded-sm object-cover border border-gray-200"
+      loading="lazy"
+    />
+  );
+};
 
 const languages: Language[] = [
-  { code: 'en', name: 'English', flagComponent: <UKFlag /> },
-  { code: 'de', name: 'German', flagComponent: <GermanFlag /> },
-  { code: 'da', name: 'Danish', flagComponent: <DanishFlag /> },
-  { code: 'sv', name: 'Swedish', flagComponent: <SwedishFlag /> },
-  { code: 'es', name: 'Spanish', flagComponent: <SpanishFlag /> },
-  { code: 'ar', name: 'Arabic', flagComponent: <ArabicFlag /> },
-  { code: 'fa', name: 'Persian', flagComponent: <PersianFlag /> },
-  { code: 'el', name: 'Greek', flagComponent: <GreekFlag /> },
-  { code: 'ur', name: 'Urdu', flagComponent: <UrduFlag /> },
-  { code: 'pa', name: 'Punjabi', flagComponent: <PunjabiFlag /> },
+  { code: 'en', name: 'English', flagComponent: createFlagComponent('en') },
+  { code: 'de', name: 'German', flagComponent: createFlagComponent('de') },
+  { code: 'da', name: 'Danish', flagComponent: createFlagComponent('da') },
+  { code: 'sv', name: 'Swedish', flagComponent: createFlagComponent('sv') },
+  { code: 'es', name: 'Spanish', flagComponent: createFlagComponent('es') },
+  { code: 'ar', name: 'Arabic', flagComponent: createFlagComponent('ar') },
+  { code: 'fa', name: 'Persian', flagComponent: createFlagComponent('fa') },
+  { code: 'el', name: 'Greek', flagComponent: createFlagComponent('el') },
+  { code: 'ur', name: 'Urdu', flagComponent: createFlagComponent('ur') },
+  { code: 'pa', name: 'Punjabi', flagComponent: createFlagComponent('pa') },
 ];
 
 const LanguageDropdown: React.FC<LanguageDropdownProps> = ({

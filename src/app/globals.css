@@ -27,6 +27,10 @@ body {
   color: #171717;
   font-family: var(--font-public-sans), "Public Sans", system-ui, sans-serif;
   font-size: 14px; /* Smaller base font size */
+  user-select: text; /* Enable text selection globally */
+  -webkit-user-select: text; /* Safari */
+  -moz-user-select: text; /* Firefox */
+  -ms-user-select: text; /* IE/Edge */
 }
 
 /* Headings use Barlow font */
@@ -206,4 +210,47 @@ h3 {
 .nav-login-button:hover {
   border-color: #000000;
   font-weight: bold;
+}
+
+/* Force enable text selection globally to override any Material-UI or other library styles */
+*, *:before, *:after {
+  user-select: text !important;
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+}
+
+/* Disable text selection only for specific interactive elements */
+button, input[type="button"], input[type="submit"], input[type="reset"], 
+.btn, .button, [role="button"], .cursor-pointer {
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+}
+
+/* Material-UI Button fixes to prevent white box rendering issues */
+.MuiButton-root {
+  font-family: var(--font-public-sans), "Public Sans", system-ui, sans-serif !important;
+  text-transform: none !important;
+}
+
+.MuiButton-outlined {
+  background-color: transparent !important;
+}
+
+.MuiButton-contained {
+  box-shadow: none !important;
+}
+
+/* Ensure proper rendering of MUI components */
+.MuiButton-root:before,
+.MuiButton-root:after {
+  content: none !important;
+}
+
+/* Fix any potential box-sizing issues */
+.MuiButton-root,
+.MuiButton-root * {
+  box-sizing: border-box;
 }

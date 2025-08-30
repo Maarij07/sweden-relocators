@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { varFade } from '@/components/animate';
+import { ReadMoreButton } from '@/components/ui/ReadMoreButton';
 
 interface ContentSectionProps {
   subtitle: string;
@@ -68,33 +69,15 @@ export function ContentSection({ subtitle, title, content, imagePosition, classN
         ))}
       </div>
       
-      <motion.button 
+      <ReadMoreButton 
         variants={varFade('inUp', { distance: 24 })}
-        className="inline-flex items-center text-gray-900 font-medium text-sm hover:text-gray-700 transition-all duration-300 group border border-gray-300 px-3 py-2 rounded-md hover:border-gray-400 hover:shadow-sm"
-      >
-        Read More
-        <motion.svg 
-          className="w-4 h-4 ml-2" 
-          fill="none" 
-          stroke="currentColor" 
-          viewBox="0 0 24 24"
-          whileHover={{ 
-            rotate: 180,
-            x: 4
-          }}
-          transition={{ 
-            duration: 0.3,
-            ease: "easeInOut"
-          }}
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </motion.svg>
-      </motion.button>
+        onClick={() => {}}
+      />
     </div>
   );
 
   return (
-    <div className={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-16 lg:mb-24 ${className}`}>
+    <div className={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-16 lg:mb-24 select-text ${className}`}>
       {imagePosition === 'left' ? (
         <>
           {imageComponent}

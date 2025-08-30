@@ -3,10 +3,11 @@
 import { motion } from 'framer-motion';
 import { ContentSection } from '@/components/ui/ContentSection';
 import { ProgressChart } from '@/components/ui/AnimatedChart';
+import { ReadMoreButton } from '@/components/ui/ReadMoreButton';
 
 export function WhyChooseUsSection() {
   return (
-    <section className="py-16 lg:py-24 px-4 sm:px-6 bg-white">
+    <section className="py-16 lg:py-24 px-4 sm:px-6 bg-white select-text">
       <div className="max-w-7xl mx-auto">
         {/* Main Why Choose Us Section */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-20 lg:mb-28">
@@ -106,25 +107,7 @@ export function WhyChooseUsSection() {
             
             {/* Read More Button */}
             <div className="pt-2">
-              <button className="inline-flex items-center text-gray-900 font-medium text-sm hover:text-gray-700 transition-all duration-300 group border border-gray-300 px-3 py-2 rounded-md hover:border-gray-400 hover:shadow-sm">
-                Read More
-                <motion.svg 
-                  className="w-4 h-4 ml-2" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
-                  whileHover={{ 
-                    rotate: 180,
-                    x: 4
-                  }}
-                  transition={{ 
-                    duration: 0.3,
-                    ease: "easeInOut"
-                  }}
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </motion.svg>
-              </button>
+              <ReadMoreButton onClick={() => {}} />
             </div>
           </div>
         </div>

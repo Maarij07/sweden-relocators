@@ -21,101 +21,32 @@ const Navbar = () => {
   const [isAssessmentOpen, setIsAssessmentOpen] = useState(false);
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  // Minimalist flags for navbar button - consistent sizing
-  const createNavbarFlag = (flagType: string) => {
-    const flagProps = {
-      className: "w-3.5 h-3.5 rounded-sm overflow-hidden relative border border-gray-300"
+  // Create flag image using flagcdn API
+  const createNavbarFlag = (flagCode: string) => {
+    // Map language codes to country codes for flagcdn
+    const countryCodeMap: Record<string, string> = {
+      'en': 'gb', // English -> Great Britain
+      'de': 'de', // German -> Germany
+      'da': 'dk', // Danish -> Denmark
+      'sv': 'se', // Swedish -> Sweden
+      'es': 'es', // Spanish -> Spain
+      'ar': 'sa', // Arabic -> Saudi Arabia (or could use 'ae' for UAE)
+      'fa': 'ir', // Persian -> Iran
+      'el': 'gr', // Greek -> Greece
+      'ur': 'pk', // Urdu -> Pakistan
+      'pa': 'in', // Punjabi -> India
     };
+
+    const countryCode = countryCodeMap[flagCode] || 'gb';
     
-    switch(flagType) {
-      case 'en':
-        return (
-          <div {...flagProps}>
-            <div className="absolute inset-0 bg-blue-600"></div>
-            <div className="absolute inset-0 bg-white" style={{ clipPath: 'polygon(47% 0, 53% 0, 53% 100%, 47% 100%)' }}></div>
-            <div className="absolute inset-0 bg-white" style={{ clipPath: 'polygon(0 47%, 0 53%, 100% 53%, 100% 47%)' }}></div>
-            <div className="absolute inset-0 bg-red-500" style={{ clipPath: 'polygon(49% 0, 51% 0, 51% 100%, 49% 100%)' }}></div>
-            <div className="absolute inset-0 bg-red-500" style={{ clipPath: 'polygon(0 49%, 0 51%, 100% 51%, 100% 49%)' }}></div>
-          </div>
-        );
-      case 'de':
-        return (
-          <div {...flagProps}>
-            <div className="h-1 bg-black"></div>
-            <div className="h-1.5 bg-red-600"></div>
-            <div className="h-1 bg-yellow-400"></div>
-          </div>
-        );
-      case 'da':
-        return (
-          <div {...flagProps}>
-            <div className="absolute inset-0 bg-red-600"></div>
-            <div className="absolute left-1 top-0 w-0.5 h-full bg-white"></div>
-            <div className="absolute left-0 top-1.5 w-full h-0.5 bg-white"></div>
-          </div>
-        );
-      case 'sv':
-        return (
-          <div {...flagProps}>
-            <div className="absolute inset-0 bg-blue-500"></div>
-            <div className="absolute left-1 top-0 w-0.5 h-full bg-yellow-400"></div>
-            <div className="absolute left-0 top-1.5 w-full h-0.5 bg-yellow-400"></div>
-          </div>
-        );
-      case 'es':
-        return (
-          <div {...flagProps}>
-            <div className="h-0.5 bg-red-600"></div>
-            <div className="h-2.5 bg-yellow-400"></div>
-            <div className="h-0.5 bg-red-600"></div>
-          </div>
-        );
-      case 'ar':
-        return (
-          <div {...flagProps}>
-            <div className="h-1 bg-green-600"></div>
-            <div className="h-1.5 bg-white"></div>
-            <div className="h-1 bg-black"></div>
-          </div>
-        );
-      case 'fa':
-        return (
-          <div {...flagProps}>
-            <div className="h-1 bg-green-600"></div>
-            <div className="h-1.5 bg-white"></div>
-            <div className="h-1 bg-red-600"></div>
-          </div>
-        );
-      case 'el':
-        return (
-          <div {...flagProps}>
-            <div className="absolute inset-0 bg-white">
-              {[...Array(4)].map((_, i) => (
-                <div key={i} className="h-0.5 bg-blue-600" style={{ marginTop: `${i * 3.5}px` }}></div>
-              ))}
-            </div>
-            <div className="absolute top-0 left-0 w-1.5 h-1.5 bg-blue-600"></div>
-          </div>
-        );
-      case 'ur':
-        return (
-          <div {...flagProps}>
-            <div className="absolute inset-0 bg-green-600"></div>
-            <div className="absolute left-0 top-0 w-1 h-full bg-white"></div>
-            <div className="absolute left-0.5 top-1 w-1.5 h-1.5 flex items-center justify-center text-white text-xs">☪</div>
-          </div>
-        );
-      case 'pa':
-        return (
-          <div {...flagProps}>
-            <div className="h-1 bg-orange-500"></div>
-            <div className="h-1.5 bg-white"></div>
-            <div className="h-1 bg-green-600"></div>
-          </div>
-        );
-      default:
-        return createNavbarFlag('en');
-    }
+    return (
+      <img 
+        src={`https://flagcdn.com/h20/${countryCode}.png`}
+        alt={`${flagCode} flag`}
+        className="w-6 h-4 rounded-sm object-cover border border-gray-300"
+        loading="lazy"
+      />
+    );
   };
 
   const [selectedLanguage, setSelectedLanguage] = useState<Language>({
@@ -177,10 +108,10 @@ const Navbar = () => {
           <img 
             src="/sweden-logo.jpg?v=2" 
             alt="Sweden Relocators" 
-            className="h-16 w-auto object-contain"
+            className="h-10 sm:h-12 w-auto object-contain"
             loading="eager"
             style={{
-              maxHeight: '64px',
+              maxHeight: '48px',
               height: 'auto',
               imageRendering: 'crisp-edges',
               filter: 'brightness(1.05) contrast(1.08) saturate(1.1)', // Enhanced for better visibility
@@ -369,14 +300,14 @@ const Navbar = () => {
           </div>
           
           <button 
-            className="bg-black text-white px-3.5 py-1.5 border rounded-lg font-medium text-xs transition-colors duration-200 hover:bg-gray-700 cursor-pointer h-9"
+            className="bg-black text-white px-3 py-1.5 border rounded-lg font-medium text-xs transition-colors duration-200 hover:bg-gray-700 cursor-pointer h-9"
             style={{
               borderWidth: '1px',
               borderStyle: 'solid',
               borderColor: 'black'
             }}
           >
-            Book Appointment
+            Book An Appointment
           </button>
           
           <button 
@@ -384,6 +315,9 @@ const Navbar = () => {
             style={{
               borderWidth: '1px',
               borderStyle: 'solid'
+            }}
+            onClick={() => {
+              window.open('https://pages.nordicrelocators.com/dashboard', '_blank');
             }}
           >
             Login

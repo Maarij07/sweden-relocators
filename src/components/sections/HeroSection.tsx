@@ -123,47 +123,44 @@ export function HeroSection() {
                 </motion.div>
               </div>
               
-              {/* Right Content - Enhanced Animated Image */}
+              {/* Right Content - Hero Video */}
               <motion.div 
                 style={{ y: y5 }} 
                 className="relative"
                 {...motionProps}
               >
-                <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-xl bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200">
-                  {/* Professional placeholder background */}
-                  <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 relative">
-                    
-                    {/* Subtle decorative elements */}
-                    <div className="absolute top-6 left-6 w-16 h-1 bg-blue-200 rounded-full opacity-60"></div>
-                    <div className="absolute top-9 left-6 w-12 h-1 bg-blue-300 rounded-full opacity-40"></div>
-                    <div className="absolute bottom-6 right-6 w-20 h-1 bg-yellow-200 rounded-full opacity-60"></div>
-                    <div className="absolute bottom-9 right-6 w-14 h-1 bg-yellow-300 rounded-full opacity-40"></div>
-                    
-                    {/* Central content area */}
-                    <div className="text-center space-y-4">
-                      {/* Subtle play button */}
-                      <motion.div 
-                        className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border border-gray-100 cursor-pointer mx-auto"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <svg className="w-8 h-8 text-gray-600 ml-1" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M8 5v14l11-7z"/>
-                        </svg>
-                      </motion.div>
-                      
-                      {/* Placeholder text */}
-                      <div className="space-y-2">
-                        <p className="text-gray-600 font-medium text-sm">Watch Our Introduction</p>
-                        <p className="text-gray-400 text-xs">Video coming soon</p>
+                <div className="relative aspect-[16/9] rounded-xl overflow-hidden shadow-xl border border-gray-200">
+                  <video 
+                    className="w-full h-full object-cover"
+                    autoPlay
+                    loop
+                    playsInline
+                    controls
+                    poster="/sweden-logo.jpg"
+                  >
+                    <source src="https://swedenrelocators.se/videos/hero_video.mp4" type="video/mp4" />
+                    <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 relative">
+                      <div className="text-center space-y-4">
+                        <motion.div 
+                          className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border border-gray-100 cursor-pointer mx-auto"
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          <svg className="w-8 h-8 text-gray-600 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"/>
+                          </svg>
+                        </motion.div>
+                        <div className="space-y-2">
+                          <p className="text-gray-600 font-medium text-sm">Video not supported</p>
+                          <p className="text-gray-400 text-xs">Please update your browser</p>
+                        </div>
                       </div>
                     </div>
-                    
-                    {/* Corner accent - subtle Swedish flag colors */}
-                    <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-blue-500/10 to-transparent rounded-bl-full"></div>
-                    <div className="absolute bottom-0 left-0 w-20 h-20 bg-gradient-to-tr from-yellow-400/10 to-transparent rounded-tr-full"></div>
-                  </div>
+                  </video>
+                  
+                  {/* Optional overlay for better text readability if needed */}
+                  <div className="absolute inset-0 bg-black/10 pointer-events-none"></div>
                 </div>
               </motion.div>
             </MotionContainer>
